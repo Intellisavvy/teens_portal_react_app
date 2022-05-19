@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-
+import { useRef } from 'react';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
@@ -28,7 +28,6 @@ function Post(props) {
      see:'',
      seen:'',
      mass:'',
-     zoo:'',
      so:''
     })
 
@@ -38,16 +37,19 @@ function Post(props) {
     //     const hike=e.target.value;
     //     setlove(hike);
     // }
+    const checkboxref =useRef('');
     const{one,two,three,four,five,six,seven,eight,nine,ten,bang,saw,see,seen,so}=data;
+    const[checkbox,setcheckbox]=useState(false);
     const Post=e=>{
+        setcheckbox(checkboxref.current.checked);
         setdata({...data,[e.target.name]:e.target.value});
         const hike=e.target.value;
         setlove(hike);
-    }
+    };
     
     const Hello=e=>{
         e.preventDefault();
-       
+       props.onflow(one,two,three,four,five,six,seven,eight,nine,ten,bang,saw,see,seen,so);
         setdata({
             one:'',
             two:'',
@@ -64,7 +66,6 @@ function Post(props) {
             see:'',
             seen:'',
             mass:'',
-            zoo:'',
             so:''
         })
     }
@@ -72,14 +73,14 @@ function Post(props) {
    
     return (
       <div >
-          <h1>Vendor job post</h1>
+        
             <Grid container>
       
       <Box
         sx={{
           boxShadow: 6,
           width: '45rem',
-          bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
+          bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#FFFFFF' : '#FFFFFF'),
           color: (theme) =>
             theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
           p: 1,
@@ -87,12 +88,13 @@ function Post(props) {
           borderRadius: 2,
           fontSize: '0.875rem',
           fontWeight: '700',
-          marginLeft:'17rem'
+          marginLeft:'17rem',
+          marginTop:'5rem'
         }}
       >
          <form onSubmit={Hello} className="side">  
                
-                <div>
+                <div className="sall">
                 <TextField
                            
                             name='one'
@@ -100,30 +102,39 @@ function Post(props) {
                             placeholder='Enter Name/Organization'
                             type={'text'}
                             onChange={Post}
+                             
                         />
                 </div><br/>
                 <div>
                     <div >
                         <label><b>JOB Title</b></label>
-                        {love === 70 && 
+                        {/* {love === 70 && 
                    (
-                       <div style={{position:'relative'}}>
-                         <TextField placeholder='Enter job category '  name="zoo" />
+                       <div >
+                         <TextField placeholder='Enter job category ' value="sel" />
                         </div>
                        
                    )
-                   }
+                   } */}
                     <Select  labelId="demo-simple-select-label" id="demo-simple-select"
                            value={two}   name="two" onChange={Post}   
                            >
-                          <MenuItem value={0}>---None---</MenuItem>     
-                          <MenuItem value={10}>Baby Sitter</MenuItem>
-                          <MenuItem value={20}>Gardener</MenuItem>
-                           <MenuItem value={30}>Pizza Delivery</MenuItem>
-                           <MenuItem value={40}>Coffee Day Waiter</MenuItem>
-                           <MenuItem value={50}>Type Writer</MenuItem>
-                           <MenuItem value={60}>Online Tutions</MenuItem>
-                           <MenuItem value={70}>None of Above{props.TextField}</MenuItem>
+                          <MenuItem value="none">---None---</MenuItem>     
+                          <MenuItem value="Babysiter">Baby Sitter</MenuItem>
+                          <MenuItem value="Gardener">Gardener</MenuItem>
+                           <MenuItem value="Pizza delivery">Pizza Delivery</MenuItem>
+                           <MenuItem value="Coffee day">Coffee Day Waiter</MenuItem>
+                           <MenuItem value="Type writer">Type Writer</MenuItem>
+                           <MenuItem value="Online tution">Online Tutions</MenuItem>
+                           <MenuItem value="cook">Cook</MenuItem>
+                           <MenuItem value="crew members">Crew members</MenuItem>
+                           <MenuItem value="cashier">Cashier</MenuItem>
+                           <MenuItem value="clerk helper">Clerk Helper</MenuItem>
+                           <MenuItem value="sales crew">Sales crew</MenuItem>
+                           <MenuItem value="Dish washer">Dish washer</MenuItem>
+                           <MenuItem value="Beverage supplier">Beverage supplier</MenuItem>
+                           <MenuItem value="pool cleaning">Pool cleaning</MenuItem>
+                           <MenuItem value="none ">None of Above</MenuItem>
                     </Select>
                   
                     </div>
@@ -174,26 +185,25 @@ function Post(props) {
                         <div>
                             <label><b>Job Location</b></label>
                         </div>
-                        <TextField
-                           
-                            value={seven}   name="seven" onChange={Post} 
-                           placeholder='State'
-                          
-                        />
-                        <TextField
-                           
-                            id="outlined-password-input"
-                            placeholder='city'
-                            value={eight}   name="eight" onChange={Post} 
-                          
-                        />
-                        <TextField
-                          
-                            id="outlined-password-input"
-                            placeholder='Zip code'
-                            value={nine}   name="nine" onChange={Post} 
-                            type={'number'}
-                        />
+                        <div style={{display:'flex'}}>
+                            <div>
+                                <TextField
+                                 value={seven}   name="seven" onChange={Post} 
+                                  placeholder='State'/>
+                            </div>
+                            <div>
+                                    <TextField 
+                                      placeholder='city'
+                                    value={eight}   name="eight" onChange={Post} />
+                            </div>
+                            <div>
+                               <TextField
+                                 id="outlined-password-input"
+                                 placeholder='Zip code'
+                                value={nine}   name="nine" onChange={Post} 
+                                 type={'number'} />
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <div>
@@ -202,10 +212,10 @@ function Post(props) {
                         <textarea     value={ten}   name="ten" onChange={Post} />
                     </div>
                     <div>
-                        <input type={'checkbox'} value={bang} name="bang"  onChange={Post}  /> I accept TERMS & CONDITIONS
+                        <input type={'checkbox'} value={bang} name="bang"  onChange={Post} ref={checkboxref} /> I accept TERMS & CONDITIONS
 
                     </div>
-                    <div className='btn'>
+                    <div className='button'>
                         <Button variant="contained" type={'submit'}  >Post Job</Button>
                     </div>
                 </div>
@@ -218,6 +228,6 @@ function Post(props) {
   }
   
   export default Post;
- 
+  
 
   
