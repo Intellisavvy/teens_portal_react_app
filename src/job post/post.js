@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 function Post(props) {
+
+    const[check,setcheck]=React.useState(false);
     const[data,setdata]=useState({
      one:'',
      two:'',
@@ -24,11 +26,10 @@ function Post(props) {
      nine:'',
      ten:'',
      bang:'false',
-     saw:'',
-     see:'',
-     seen:'',
-     mass:'',
-     so:''
+     first:'',
+     second:'',
+     third:'',
+     fourth:''
     })
 
     
@@ -38,7 +39,7 @@ function Post(props) {
     //     setlove(hike);
     // }
     const checkboxref =useRef('');
-    const{one,two,three,four,five,six,seven,eight,nine,ten,bang,saw,see,seen,so}=data;
+    const{one,two,three,four,five,six,seven,eight,nine,ten,bang,first,second,third,fourth}=data;
     const[checkbox,setcheckbox]=useState(false);
     const Post=e=>{
         setcheckbox(checkboxref.current.checked);
@@ -49,7 +50,9 @@ function Post(props) {
     
     const Hello=e=>{
         e.preventDefault();
-       props.onflow(one,two,three,four,five,six,seven,eight,nine,ten,bang,saw,see,seen,so);
+       
+         
+       props.onflow(one,two,three,four,five,six,seven,eight,nine,ten,bang,first,second,third,fourth);
         setdata({
             one:'',
             two:'',
@@ -62,11 +65,11 @@ function Post(props) {
             nine:'',
             ten:'',
             bang:'',
-            saw:'',
-            see:'',
-            seen:'',
-            mass:'',
-            so:''
+            sem:'',
+           first:'',
+           second:'',
+           third:'',
+           fourth:''
         })
     }
 
@@ -136,7 +139,7 @@ function Post(props) {
                            <MenuItem value="pool cleaning">Pool cleaning</MenuItem>
                            <MenuItem value="none ">None of Above</MenuItem>
                     </Select>
-                  
+                     
                     </div>
                   
                     <div >
@@ -148,10 +151,10 @@ function Post(props) {
                     <div>
                         <label ><b>Payment</b></label>
                         <div>
-                            <FormControlLabel control={<Checkbox  />} label="Cash Payment" style={{ marginLeft: "3%" }} name="saw" value={saw}  onChange={Post} /> <br />
-                            <FormControlLabel control={<Checkbox />} label="Net Banking" style={{ marginLeft: "3%" }} name="see" value={see}  onChange={Post} /> <br />
-                            <FormControlLabel control={<Checkbox />} label="Cheque Payment" style={{ marginLeft: "3%" }} name="seen" value={seen}  onChange={Post}/> <br />
-                            <FormControlLabel control={<Checkbox />} label="Cash App / Zelle / PayPal" style={{ marginLeft: "3%" }} name="so" value={so}  onChange={Post}/> <br />
+                            <FormControlLabel control={<Checkbox  />} label="Cash Payment" style={{ marginLeft: "3%" }} name="first" value="fisrt"  onChange={Post} /> <br />
+                            <FormControlLabel control={<Checkbox />} label="Net Banking" style={{ marginLeft: "3%" }} name="second" value="second"  onChange={Post} /> <br />
+                            <FormControlLabel control={<Checkbox />} label="Cheque Payment" style={{ marginLeft: "3%" }} name="third" value="third" onChange={Post}/> <br />
+                            <FormControlLabel control={<Checkbox />} label="Cash App / Zelle / PayPal" style={{ marginLeft: "3%" }} name="fourth" value="fourth"  onChange={Post}/> <br />
                         </div>
                     </div>
                     <div className='signin'>
@@ -212,7 +215,7 @@ function Post(props) {
                         <textarea     value={ten}   name="ten" onChange={Post} />
                     </div>
                     <div>
-                        <input type={'checkbox'} value={bang} name="bang"  onChange={Post} ref={checkboxref} /> I accept TERMS & CONDITIONS
+                        <input type={'checkbox'} value={bang} name="bang" defaultChecked={check} onChange={()=>setcheck(!check)}  /> I accept TERMS & CONDITIONS
 
                     </div>
                     <div className='button'>

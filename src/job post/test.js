@@ -1,5 +1,6 @@
 import React from "react";
 import Box from '@mui/material/Box';
+import { display } from "@mui/system";
 
 
 
@@ -20,6 +21,7 @@ import Box from '@mui/material/Box';
           fontSize: '0.875rem',
           fontWeight: '700',
           marginLeft:'17rem'
+          
         }}>
          
          {props.fin.map((no)=>
@@ -32,11 +34,12 @@ import Box from '@mui/material/Box';
            <p><b>From:</b>{no.from}</p>
            <p><b>To:</b>{no.to}</p>
            <p><b>Work timings:</b>{no.time}</p>
-           <p><b>Job location</b></p>
+           <p><b>Job location</b>{no.location}</p>
            <p><b>State:</b>{no.state}</p>
            <p><b>City:</b>{no.city}</p>
            <p><b>Zipcode:</b>{no.code}</p>
            <p><b>Contact Details:</b>{no.details}</p>
+           
          </tr>
          )}
          
