@@ -1,6 +1,7 @@
 import {
     useRoutes,
 } from "react-router-dom";
+import { About } from "../../scenes/about";
 import { Dashboard } from "../../scenes/dashboard";
 import { Home } from "../../scenes/home";
 import { UserCard } from "../../scenes/users/UserCard";
@@ -22,8 +23,8 @@ export const AppRoutes = () => {
                     element: <Dashboard />
                 },
                 {
-                    path: "dashboard",
-                    element: <Dashboard />
+                    path:'aboutus',
+                    element: <About/>
                 },
                 {
                     path: "users",
