@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
 export default function MainNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -58,7 +59,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Home
+                    <Link to="home">Home</Link>
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -67,7 +68,8 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    About
+                    <Link to="about">About</Link>
+
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -76,7 +78,8 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Login
+                    <Link to="login">Login</Link>
+
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -85,7 +88,8 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Create Account
+                    <Link to="createAccount">Create Account</Link>
+
                 </Typography>
             </MenuItem>
         </Menu>
@@ -101,9 +105,9 @@ export default function MainNavbar() {
                         component="div"
                         sx={{ display: { sm: 'block' }, ali: 'center' }}
                     >
-                        <span style={{color:"red", fontWeight: "bolder"}}>Teen</span>Job
+                        <span style={{ color: "red", fontWeight: "bolder" }}>Teen</span>Job
                     </Typography>
-                    <Box sx={{ flexGrow: 1 }} ><span style={{color:"#ffffff1a"}}>Main Page</span></Box>
+                    <Box sx={{ flexGrow: 1 }} ><span style={{ color: "#ffffff1a" }}>Main Page</span></Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <MenuItem>
                             <Typography
@@ -111,7 +115,7 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Home
+                                <Link to="home">Home</Link>
                             </Typography>
 
                         </MenuItem>
@@ -121,7 +125,8 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                About
+                                <Link to="about">About</Link>
+
                             </Typography>
                         </MenuItem>
                         <MenuItem>
@@ -130,7 +135,8 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Login
+                                <Link to="login">Login</Link>
+
                             </Typography>
                         </MenuItem>
                         <MenuItem>
@@ -139,7 +145,8 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Create Account
+                                <Link to="createAccount">Create Account</Link>
+
                             </Typography>
                         </MenuItem>
                     </Box>
