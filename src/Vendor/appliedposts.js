@@ -14,8 +14,10 @@ const Item = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
+ 
 
 function Applied(){
+  // const{data}=this.props.location;
     return(
         <div>
             <Box sx={{ flexGrow: 1 }}>
@@ -70,10 +72,11 @@ function Applied(){
         </Grid>
       </Grid>
     </Box>
+
         </div>
     )
 }
 export default Applied;
 
-///////////////
+
 

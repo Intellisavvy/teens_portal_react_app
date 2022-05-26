@@ -4,13 +4,11 @@ import { sizeHeight } from '@mui/system';
 import { useState } from 'react';
 import { Route,Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
-// import { BrowserRouter, Routes } from 'react-router-dom';
-// import{Route} from 'react-router-dom';
-import './job post/App.css';
-import Applied from './job post/appliedposts';
-import Post from './job post/post';
-import Hey from './job post/test';
+import { BrowserRouter } from 'react-router-dom';
+import './Vendor/App.css';
+import Applied from './Vendor/appliedposts';
+import Post from './Vendor/Jobpost';
+// import Hey from './job post/test';
 
 
 
@@ -30,12 +28,11 @@ function App() {
   <Link className='side' to='/applied'>posting</Link>
     <Switch>
         <Route path='/' exact component={Post}/>
-        {/* <Route path='/' exact component={Hey}/> */}
         <Route path='/applied' exact component={Applied}/>
     </Switch>
   
   </BrowserRouter>
-      {/* <VendorNavbar/>
+      {/*
      <Post onflow={data}/>
      <Hey fin={now}/> */}
      

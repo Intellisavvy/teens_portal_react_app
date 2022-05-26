@@ -8,11 +8,14 @@ import './App.css';
 import { Checkbox, Select,MenuItem, BadgeMark } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-
+import { red } from '@mui/material/colors';
+import axios from 'axios';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+ 
 
-function Post(props) {
 
+function Post() {
+   
     const[check,setcheck]=React.useState(false);
     const[data,setdata]=useState({
      one:'',
@@ -25,7 +28,7 @@ function Post(props) {
      eight:'',
      nine:'',
      ten:'',
-     bang:'false',
+     bang:'',
      first:'',
      second:'',
      third:'',
@@ -50,9 +53,9 @@ function Post(props) {
     
     const Hello=e=>{
         e.preventDefault();
-       
+       axios.post('https://react-teen-job-default-rtdb.firebaseio.com/details.json',data).then(()=>alert('submitted'))
          
-       props.onflow(one,two,three,four,five,six,seven,eight,nine,ten,bang,first,second,third,fourth);
+    //    props.onflow(one,two,three,four,five,six,seven,eight,nine,ten,bang,first,second,third,fourth);
         setdata({
             one:'',
             two:'',
@@ -79,22 +82,7 @@ function Post(props) {
         
             <Grid container>
       
-      <Box
-        sx={{
-          boxShadow: 6,
-          width: '45rem',
-          bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#FFFFFF' : '#FFFFFF'),
-          color: (theme) =>
-            theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
-          p: 1,
-          m: 1,
-          borderRadius: 2,
-          fontSize: '0.875rem',
-          fontWeight: '700',
-          marginLeft:'17rem',
-          marginTop:'5rem'
-        }}
-      >
+      <Box className='well'>
          <form onSubmit={Hello} className="side">  
                
                 <div className="sall">
@@ -105,12 +93,13 @@ function Post(props) {
                             placeholder='Enter Name/Organization'
                             type={'text'}
                             onChange={Post}
+                            className="size1"
                              
                         />
-                </div><br/>
-                <div>
+                </div>
+                <div className='sall1'>
                     <div >
-                        <label><b>JOB Title</b></label>
+                        <label><b>JOB Title</b></label><br/>
                         {/* {love === 70 && 
                    (
                        <div >
@@ -119,9 +108,10 @@ function Post(props) {
                        
                    )
                    } */}
+                  
+                   <div >
                     <Select  labelId="demo-simple-select-label" id="demo-simple-select"
-                           value={two}   name="two" onChange={Post}   
-                           >
+                           value={two}   name="two" onChange={Post}  className='size1' >
                           <MenuItem value="none">---None---</MenuItem>     
                           <MenuItem value="Babysiter">Baby Sitter</MenuItem>
                           <MenuItem value="Gardener">Gardener</MenuItem>
@@ -139,14 +129,16 @@ function Post(props) {
                            <MenuItem value="pool cleaning">Pool cleaning</MenuItem>
                            <MenuItem value="none ">None of Above</MenuItem>
                     </Select>
-                     
+                     </div>
                     </div>
                   
                     <div >
                         <div>
                             <label><b>Job Description</b></label>
                         </div>
-                        <textarea  value={three}   name="three" onChange={Post} required /> 
+                        <div>
+                        <textarea  value={three}   name="three" onChange={Post} required className='size'/> 
+                        </div>
                     </div>                   
                     <div>
                         <label ><b>Payment</b></label>
@@ -157,65 +149,66 @@ function Post(props) {
                             <FormControlLabel control={<Checkbox />} label="Cash App / Zelle / PayPal" style={{ marginLeft: "3%" }} name="fourth" value="fourth"  onChange={Post}/> <br />
                         </div>
                     </div>
-                    <div className='signin'>
-                    <label><b>Time Period</b></label>
-                      <div>
-                      <TextField
-                          
-                            value={four}   name="four" onChange={Post} 
-                           placeholder='State'
-                           type={'date'}
-                        />
-                         <TextField
-                            
-                            value={five}   name="five" onChange={Post} 
-                           placeholder='State'
-                           type={'date'}
-                        />
-                     
-                      </div>
+                   
+                     <div >
+                        <div>
+                            <label><b>Total Time Period</b></label>
+                        </div>
+                        <div style={{display:'flex'}}>
+                            <div >
+                                <TextField
+                                 value={four}   name="four" onChange={Post}  className='flow' type={'date'}
+                                  />
+                                 
+                            </div>
+                            <div className='flip'>
+                                    <TextField 
+                                     type={'date'}
+                                    value={five}   name="five" onChange={Post}  className='flow' />
+                            </div>
+                        </div>
                     </div>
                     <div >
                         <div>
                             <label><b>Work Timings</b></label>
                         </div>
-                        <TextField
-                           
-                            value={six}   name="six" onChange={Post} 
-                            />
+                        <TextField value={six}   name="six" onChange={Post} className="size1"/>
                     </div>
                     <div >
                         <div>
                             <label><b>Job Location</b></label>
                         </div>
                         <div style={{display:'flex'}}>
-                            <div>
+                            <div >
                                 <TextField
-                                 value={seven}   name="seven" onChange={Post} 
+                                 value={seven}   name="seven" onChange={Post}  className='flow'
                                   placeholder='State'/>
+                                 
                             </div>
-                            <div>
+                            <div className='flip'>
                                     <TextField 
                                       placeholder='city'
-                                    value={eight}   name="eight" onChange={Post} />
+                                    value={eight}   name="eight" onChange={Post}  className='flow' />
                             </div>
-                            <div>
+                            <div className='flip'>
                                <TextField
                                  id="outlined-password-input"
                                  placeholder='Zip code'
-                                value={nine}   name="nine" onChange={Post} 
+                                value={nine}   name="nine" onChange={Post}  className='flow'
                                  type={'number'} />
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className='size1'>
                         <div>
-                            <label><b>Contact Details</b></label>
+                            <label><b>Contact Details</b></label><br/>
                         </div>
-                        <textarea     value={ten}   name="ten" onChange={Post} />
+                        <div>
+                        <textarea     value={ten}   name="ten" className='size' onChange={Post} />
+                        </div>
                     </div>
                     <div>
-                        <input type={'checkbox'} value={bang} name="bang" defaultChecked={check} onChange={()=>setcheck(!check)}  /> I accept TERMS & CONDITIONS
+                        <input type={'checkbox'} value={bang} name="bang"   onChange={()=>setcheck(!check)}  /> I accept TERMS & CONDITIONS
 
                     </div>
                     <div className='button'>
@@ -225,7 +218,8 @@ function Post(props) {
                      </form>
 
       </Box>
-    </Grid>             
+    </Grid>   
+        
             </div>
     );
   }
