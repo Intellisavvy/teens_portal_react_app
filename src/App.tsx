@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { AppRoutes } from './components/AppRoutes';
 import Footer from './components/Footer';
@@ -14,7 +15,9 @@ function App() {
       {/* <VendorNavbar /> */}
       {/* <TeenNavbar /> */}
       {/* <ParentNavbar /> */}
-      <AppRoutes />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
 
       <Footer />
 
