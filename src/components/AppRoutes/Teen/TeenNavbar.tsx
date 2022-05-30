@@ -81,17 +81,7 @@ export default function TeenNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                                        <Link className='link' to='/jobsearch'>Job Search</Link>
-                    
-                </Typography>
-            </MenuItem>
-            <MenuItem>
-                <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{ display: { sm: 'block' }, mr: 3 }}
-                >
-                                        <Link className='link' to='/jobsapplied'>Jobs Applied</Link>
+                    <Link className='link1' to='/jobsearch'>Job Search</Link>
 
                 </Typography>
             </MenuItem>
@@ -101,7 +91,17 @@ export default function TeenNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to='/logout'>Logout</Link>
+                    <Link className='link1' to='/jobsapplied'>Jobs Applied</Link>
+
+                </Typography>
+            </MenuItem>
+            <MenuItem>
+                <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{ display: { sm: 'block' }, mr: 3 }}
+                >
+                    <Link className='link1' to='/logout'>Logout</Link>
                 </Typography>
             </MenuItem>
         </Menu>
@@ -117,9 +117,9 @@ export default function TeenNavbar() {
                         component="div"
                         sx={{ display: { sm: 'block' }, ali: 'center' }}
                     >
-                        <span style={{color:"red", fontWeight: "bolder"}}>Teen</span>Job
+                        <span style={{ color: "red", fontWeight: "bolder" }}>Teen</span>Job
                     </Typography>
-                    <Box sx={{ flexGrow: 1 }}><span style={{color:"#ffffff1a"}}>Teen Page</span></Box>
+                    <Box sx={{ flexGrow: 1 }}><span style={{ color: "#ffffff1a" }}>Teen Page</span></Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <MenuItem>
                             <Typography
@@ -137,7 +137,7 @@ export default function TeenNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                                                        <Link className='link' to='/jobsapplied'>Jobs Applied</Link>
+                                <Link className='link' to='/jobsapplied'>Jobs Applied</Link>
 
                             </Typography>
                         </MenuItem>
@@ -147,7 +147,7 @@ export default function TeenNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                        <Link className='link' to='/logout'>Logout</Link>
+                                <Link className='link' to='/logout'>Logout</Link>
                             </Typography>
                         </MenuItem>
                         {/* <IconButton

@@ -58,7 +58,7 @@ export default function ParentNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to="/childrenprofile" >Childern Profile</Link>
+                    <Link className='link1' to="/childrenprofile" >Childern Profile</Link>
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -67,7 +67,7 @@ export default function ParentNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to='/logout'>Logout</Link>
+                    <Link className='link1' to='/logout'>Logout</Link>
                 </Typography>
             </MenuItem>
         </Menu>

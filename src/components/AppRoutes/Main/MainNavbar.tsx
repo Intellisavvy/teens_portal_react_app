@@ -59,7 +59,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to="/">Home</Link>
+                    <Link className='link1' to="/">Home</Link>
 
                 </Typography>
             </MenuItem>
@@ -69,7 +69,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to="/about">About</Link>
+                    <Link className='link1' to="/about">About</Link>
 
                 </Typography>
             </MenuItem>
@@ -79,7 +79,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to="/login">Login</Link>
+                    <Link className='link1' to="/login">Login</Link>
 
                 </Typography>
             </MenuItem>
@@ -89,7 +89,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to="/createacc">Create Account</Link>
+                    <Link className='link1' to="/createacc">Create Account</Link>
                 </Typography>
             </MenuItem>
         </Menu>

@@ -81,7 +81,7 @@ export default function VendorNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to='/jobposting'>Post a Job</Link>
+                    <Link className='link1' to='/jobposting'>Post a Job</Link>
 
                 </Typography>
             </MenuItem>
@@ -91,7 +91,7 @@ export default function VendorNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to='/applications'>Applied Jobs</Link>
+                    <Link className='link1' to='/applications'>Applied Jobs</Link>
 
                 </Typography>
             </MenuItem>
@@ -101,7 +101,7 @@ export default function VendorNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link className='link' to='/logout'>Logout</Link>
+                    <Link className='link1' to='/logout'>Logout</Link>
 
                 </Typography>
             </MenuItem>

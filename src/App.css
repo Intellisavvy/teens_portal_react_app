@@ -10,3 +10,13 @@
 .link:hover {
   color: wheat;
 }
+
+.link1 {
+  text-decoration: none;
+}
+.link1:visited {
+  color: black;
+}
+.link1:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
