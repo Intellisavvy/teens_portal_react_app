@@ -1,10 +1,10 @@
 import {
     useRoutes,
 } from "react-router-dom";
-import { About } from "../Body/About";
-import { CreateAccount } from "../Body/CreateAccount";
 import { Login } from "../Body/Login";
-import MainNavbar from "../Navbar/MainNavbar";
+import { About } from "../Body/Main/About";
+import { CreateAccount } from "../Body/Main/CreateAccount";
+import MainNavbar from "./Main/MainNavbar";
 
 export const AppRoutes = () => {
     return useRoutes([

@@ -1,23 +1,25 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import './App.css';
 import { AppRoutes } from './components/AppRoutes';
+import Routing from './components/AppRoutes/Main';
+// import { AppRoutes } from './components/AppRoutes';
 import Footer from './components/Footer';
-import MainNavbar from './components/Navbar/MainNavbar';
-import ParentNavbar from './components/Navbar/ParentNavbar';
-import TeenNavbar from './components/Navbar/TeenNavbar';
-import VendorNavbar from './components/Navbar/VendorNavbar';
+import MainIndex from './components/Navbar/MainIndex';
+import ParentIndex from './components/Navbar/ParentIndex';
+import TeenIndex from './components/Navbar/TeenIndex';
+import VendorIndex from './components/Navbar/VendorIndex';
 
 function App() {
   return (
     <div className="App">
-      {/* <MainNavbar /> */}
-      {/* <VendorNavbar /> */}
-      {/* <TeenNavbar /> */}
-      {/* <ParentNavbar /> */}
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      <MainIndex />
+      <ParentIndex />
+      <TeenIndex />
+      <VendorIndex />
+      {/* <Routes> */}
+        {/* <AppRoutes /> */}
+      {/* </Routes> */}
 
       <Footer />
 

@@ -8,8 +8,9 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link, Routes } from 'react-router-dom';
 
-export default function ParentNavbar() {
+export default function MainNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -34,6 +35,7 @@ export default function ParentNavbar() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -57,7 +59,8 @@ export default function ParentNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Childern Profile
+                    <Link className='link' to="/">Home</Link>
+
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -66,7 +69,27 @@ export default function ParentNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Logout
+                    <Link className='link' to="/about">About</Link>
+
+                </Typography>
+            </MenuItem>
+            <MenuItem>
+                <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{ display: { sm: 'block' }, mr: 3 }}
+                >
+                    <Link className='link' to="/login">Login</Link>
+
+                </Typography>
+            </MenuItem>
+            <MenuItem>
+                <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{ display: { sm: 'block' }, mr: 3 }}
+                >
+                    <Link className='link' to="/createacc">Create Account</Link>
                 </Typography>
             </MenuItem>
         </Menu>
@@ -82,17 +105,19 @@ export default function ParentNavbar() {
                         component="div"
                         sx={{ display: { sm: 'block' }, ali: 'center' }}
                     >
-                        <span style={{color:"red", fontWeight: "bolder"}}>Teen</span>Job
+                        <span style={{ color: "red", fontWeight: "bolder" }}>Teen</span>Job
                     </Typography>
-                    <Box sx={{ flexGrow: 1 }}><span style={{color:"#ffffff1a"}}>Parent Page</span></Box>
+                    <Box sx={{ flexGrow: 1 }} ><span style={{ color: "#ffffff1a" }}>Main Page</span></Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        {/* <Routes> */}
                         <MenuItem>
                             <Typography
                                 variant="h6"
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Children Profile
+                    <Link className='link' to="/">Home</Link>
+
                             </Typography>
 
                         </MenuItem>
@@ -102,9 +127,31 @@ export default function ParentNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Logout
+                                <Link className='link' to="/about">About</Link>
+
                             </Typography>
                         </MenuItem>
+                        <MenuItem>
+                            <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{ display: { sm: 'block' } }}
+                            >
+                                <Link className='link' to="/login">Login</Link>
+
+                            </Typography>
+                        </MenuItem>
+                        <MenuItem>
+                            <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{ display: { sm: 'block' } }}
+                            >
+                                <Link className='link' to="/createacc">Create Account</Link>
+
+                            </Typography>
+                        </MenuItem>
+                        {/* </Routes> */}
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -121,6 +168,7 @@ export default function ParentNavbar() {
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
+
         </Box>
     );
 }

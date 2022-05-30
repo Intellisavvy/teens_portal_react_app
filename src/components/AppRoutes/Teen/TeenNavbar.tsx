@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
 export default function TeenNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -80,7 +81,8 @@ export default function TeenNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Job Search
+                                        <Link className='link' to='/jobsearch'>Job Search</Link>
+                    
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -89,7 +91,8 @@ export default function TeenNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Jobs Applied
+                                        <Link className='link' to='/jobsapplied'>Jobs Applied</Link>
+
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -98,7 +101,7 @@ export default function TeenNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Logout
+                    <Link className='link' to='/logout'>Logout</Link>
                 </Typography>
             </MenuItem>
         </Menu>
@@ -124,7 +127,7 @@ export default function TeenNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Job Search
+                                <Link className='link' to='/jobsearch'>Job Search</Link>
                             </Typography>
 
                         </MenuItem>
@@ -134,7 +137,8 @@ export default function TeenNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Jobs Applied
+                                                                        <Link className='link' to='/jobsapplied'>Jobs Applied</Link>
+
                             </Typography>
                         </MenuItem>
                         <MenuItem>
@@ -143,7 +147,7 @@ export default function TeenNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Logout
+                                        <Link className='link' to='/logout'>Logout</Link>
                             </Typography>
                         </MenuItem>
                         {/* <IconButton

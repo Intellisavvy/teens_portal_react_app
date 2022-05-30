@@ -7,10 +7,10 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
-export default function VendorNavbar() {
+export default function ParentNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -35,28 +35,6 @@ export default function VendorNavbar() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
-    //   const menuId = 'primary-search-account-menu';
-    //   const renderMenu = (
-    //     <Menu
-    //       anchorEl={anchorEl}
-    //       anchorOrigin={{
-    //         vertical: 'top',
-    //         horizontal: 'left',
-    //       }}
-    //       id={menuId}
-    //       keepMounted
-    //       transformOrigin={{
-    //         vertical: 'top',
-    //         horizontal: 'right',
-    //       }}
-    //       open={isMenuOpen}
-    //       onClose={handleMenuClose}
-    //     >
-    //       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-    //       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    //     </Menu>
-    //   );
-
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -80,7 +58,7 @@ export default function VendorNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Post a Job
+                    <Link className='link' to="/childrenprofile" >Childern Profile</Link>
                 </Typography>
             </MenuItem>
             <MenuItem>
@@ -89,16 +67,7 @@ export default function VendorNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    Applied Jobs
-                </Typography>
-            </MenuItem>
-            <MenuItem>
-                <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{ display: { sm: 'block' }, mr: 3 }}
-                >
-                    Logout
+                    <Link className='link' to='/logout'>Logout</Link>
                 </Typography>
             </MenuItem>
         </Menu>
@@ -114,9 +83,9 @@ export default function VendorNavbar() {
                         component="div"
                         sx={{ display: { sm: 'block' }, ali: 'center' }}
                     >
-                        <span style={{color:"red", fontWeight: "bolder"}}>Teen</span>Job
+                        <span style={{ color: "red", fontWeight: "bolder" }}>Teen</span>Job
                     </Typography>
-                    <Box sx={{ flexGrow: 1 }}><span style={{color:"#ffffff1a"}}>Vendor Page</span></Box>
+                    <Box sx={{ flexGrow: 1 }}><span style={{ color: "#ffffff1a" }}>Parent Page</span></Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <MenuItem>
                             <Typography
@@ -124,7 +93,7 @@ export default function VendorNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Post a Job
+                                <Link className='link' to="/childrenprofile">Childern Profile</Link>
                             </Typography>
 
                         </MenuItem>
@@ -134,29 +103,9 @@ export default function VendorNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                Applied Jobs
+                                <Link className='link' to='/logout'>Logout</Link>
                             </Typography>
                         </MenuItem>
-                        <MenuItem>
-                            <Typography
-                                variant="h6"
-                                component="div"
-                                sx={{ display: { sm: 'block' } }}
-                            >
-                                Logout
-                            </Typography>
-                        </MenuItem>
-                        {/* <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                              aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton> */}
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -173,7 +122,6 @@ export default function VendorNavbar() {
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
-            {/* {renderMenu} */}
         </Box>
     );
 }

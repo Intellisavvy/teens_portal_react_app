@@ -7,10 +7,11 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 
-export default function MainNavbar() {
+export default function VendorNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -35,6 +36,27 @@ export default function MainNavbar() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+    //   const menuId = 'primary-search-account-menu';
+    //   const renderMenu = (
+    //     <Menu
+    //       anchorEl={anchorEl}
+    //       anchorOrigin={{
+    //         vertical: 'top',
+    //         horizontal: 'left',
+    //       }}
+    //       id={menuId}
+    //       keepMounted
+    //       transformOrigin={{
+    //         vertical: 'top',
+    //         horizontal: 'right',
+    //       }}
+    //       open={isMenuOpen}
+    //       onClose={handleMenuClose}
+    //     >
+    //       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+    //       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    //     </Menu>
+    //   );
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -59,16 +81,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link to="home">Home</Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem>
-                <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{ display: { sm: 'block' }, mr: 3 }}
-                >
-                    <Link to="about">About</Link>
+                    <Link className='link' to='/jobposting'>Post a Job</Link>
 
                 </Typography>
             </MenuItem>
@@ -78,7 +91,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link to="login">Login</Link>
+                    <Link className='link' to='/applications'>Applied Jobs</Link>
 
                 </Typography>
             </MenuItem>
@@ -88,7 +101,7 @@ export default function MainNavbar() {
                     component="div"
                     sx={{ display: { sm: 'block' }, mr: 3 }}
                 >
-                    <Link to="createAccount">Create Account</Link>
+                    <Link className='link' to='/logout'>Logout</Link>
 
                 </Typography>
             </MenuItem>
@@ -107,7 +120,7 @@ export default function MainNavbar() {
                     >
                         <span style={{ color: "red", fontWeight: "bolder" }}>Teen</span>Job
                     </Typography>
-                    <Box sx={{ flexGrow: 1 }} ><span style={{ color: "#ffffff1a" }}>Main Page</span></Box>
+                    <Box sx={{ flexGrow: 1 }}><span style={{ color: "#ffffff1a" }}>Vendor Page</span></Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <MenuItem>
                             <Typography
@@ -115,7 +128,7 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                <Link to="home">Home</Link>
+                                <Link className='link' to='/jobposting'>Post a Job</Link>
                             </Typography>
 
                         </MenuItem>
@@ -125,8 +138,7 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                <Link to="about">About</Link>
-
+                                <Link className='link' to='/applications'>Applied Jobs</Link>
                             </Typography>
                         </MenuItem>
                         <MenuItem>
@@ -135,20 +147,21 @@ export default function MainNavbar() {
                                 component="div"
                                 sx={{ display: { sm: 'block' } }}
                             >
-                                <Link to="login">Login</Link>
+                                <Link className='link' to='/logout'>Logout</Link>
 
                             </Typography>
                         </MenuItem>
-                        <MenuItem>
-                            <Typography
-                                variant="h6"
-                                component="div"
-                                sx={{ display: { sm: 'block' } }}
-                            >
-                                <Link to="createAccount">Create Account</Link>
-
-                            </Typography>
-                        </MenuItem>
+                        {/* <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                              aria-controls={menuId}
+                            aria-haspopup="true"
+                            onClick={handleProfileMenuOpen}
+                            color="inherit"
+                        >
+                            <AccountCircle />
+                        </IconButton> */}
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -165,6 +178,7 @@ export default function MainNavbar() {
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
+            {/* {renderMenu} */}
         </Box>
     );
 }
