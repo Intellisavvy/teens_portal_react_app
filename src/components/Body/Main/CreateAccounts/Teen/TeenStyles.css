@@ -1,0 +1,36 @@
+
+.well {
+    -webkit-box-shadow: 0 0 10px #2370B5;
+    -moz-box-shadow: 0 0 10px #2370B5;
+    box-shadow: 0 0 15px #2270b44d;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.name {
+    margin: 1;
+    width: '100%';
+    display: 'flex'
+}
+
+.headText {
+    margin-top: 1rem;
+    font-weight: 550;
+}
+
+.Btext {
+    font-weight: bold;
+}
+
+.Blink {
+    text-align: center;
+    padding: 2rem;
+}
+
+.PicHead {
+    margin-left: 10rem;
+    font-weight: bold;
+    font-size: 24;
+}

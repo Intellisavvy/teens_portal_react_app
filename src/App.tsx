@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 import './App.css';
 import { AppRoutes } from './components/AppRoutes';
-import Routing from './components/AppRoutes/Main';
+import TeenReg from './components/Body/Main/CreateAccounts/Teen';
 // import { AppRoutes } from './components/AppRoutes';
 import Footer from './components/Footer';
 import MainIndex from './components/Navbar/MainIndex';
@@ -14,12 +14,15 @@ function App() {
   return (
     <div className="App">
       <MainIndex />
-      <ParentIndex />
+      {/* <ParentIndex />
       <TeenIndex />
-      <VendorIndex />
+      <VendorIndex /> */}
       {/* <Routes> */}
         {/* <AppRoutes /> */}
       {/* </Routes> */}
+
+      <TeenReg />
+
 
       <Footer />
 

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Link, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MainNavbar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
