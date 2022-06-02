@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Register() {
 
 
-    var ValidateName = "^(?=.*[a-z])(?=.*[A-Z])";
+    var ValidateName = "^[A-Za-z]+$";
     var ValidateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{5,}$/i;
     var ValidatePassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
 
