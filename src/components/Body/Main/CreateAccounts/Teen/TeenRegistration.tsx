@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Image123 from '../../../../images/reg.png';
+import Register from './TeenRegForm';
 import './TeenStyles.css';
-import RegistrationForm from './TeenRegForm';
+import { Button, ButtonGroup, Checkbox, FormControl, FormControlLabel, FormLabel, Link, Radio, RadioGroup, TextField } from '@mui/material';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -15,11 +16,11 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-const Imag = require('../../../../images/reg.png');
+const Imag = require("../../../../images/reg.png");
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function TeenRegistration() {
+export default function BasicGrid() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={0.2}>
@@ -34,7 +35,7 @@ export default function TeenRegistration() {
                 </Grid>
 
                 <Grid item md={7}>
-                    <RegistrationForm />
+                    <Register />
                 </Grid>
             </Grid>
         </Box>
