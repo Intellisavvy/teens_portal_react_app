@@ -1,0 +1,51 @@
+
+.down
+{
+  margin-top: 1rem;
+} 
+.direction{
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+.well {
+ 
+  -webkit-box-shadow: 0 0 10px #2370b5;
+  -moz-box-shadow: 0 0 10px #2370b5;
+  box-shadow: 0 0 15px #2270b44d;
+  border-radius: 10px;
+  font-size:0.875rem;
+  font-weight:700 ;
+  width:35rem;
+  margin-left:5rem ;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.textarea{
+  width: 24.5rem;
+  height: 3rem;
+  }
+  .top{
+    margin-top: 2rem;
+    margin-left: 3rem;
+  }
+  .fieldsize{
+    width: 25rem;
+    margin-left: 5rem;
+  }
+  .left{
+    margin-left: 14rem;
+  }
+  .height{
+    height: 28rem;
+  } 
+ .float
+ {
+   margin-bottom: 4rem;
+   font-size: 2rem;
+   margin-left: 4rem;
+ }
+ .paint
+ {
+   color: red;
+ }
