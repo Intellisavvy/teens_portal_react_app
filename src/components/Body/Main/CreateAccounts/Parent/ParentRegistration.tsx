@@ -3,11 +3,9 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Image123 from '../../../../images/reg.png';
-import Register from './TeenRegForm';
+import ParentRegister from './ParentRegForm';
 import './../RegStyles.css';
 
-// Other way to import images
-const Imag = require("../../../../images/reg.png");
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -18,24 +16,26 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
+const Imag = require("../../../../images/reg.png");
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function BasicGrid() {
+export default function ParentRegistration() {
     return (
-        <Box sx={{ flexGrow: 1, marginTop: '2rem' }} >
-            <Grid container spacing={0.2}>
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
                 <Grid item md={5}
-                    sx={{ justifyContent: 'center', mt: '10rem'}}
+                    sx={{ marginTop: '5rem'}}
                     display={{ xs: "none", lg: "block" }}
                 >
                     <span className='PicHead'>
-                        Find the job and grow your career
+                        Welcome Back to <span style={{ color:"red" }}>TEEN</span> JOBS !!
                     </span>
                     <img src={Image123} />
                 </Grid>
 
-                <Grid item md={7}>
-                    <Register />
+                <Grid item xs={12} md={7}>
+                    <ParentRegister />
                 </Grid>
             </Grid>
         </Box>

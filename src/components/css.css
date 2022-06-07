@@ -1,0 +1,70 @@
+.down {
+    margin-top: 1rem;
+}
+
+.direction {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.textarea {
+    width: 24.5rem;
+    height: 3rem;
+}
+
+.top {
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+.fieldsize {
+    width: 25rem;
+    /* margin-left: 5rem; */
+}
+
+.left {
+    margin-left: 14rem;
+}
+
+.height {
+    height: 28rem;
+}
+
+.float {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    margin-left: 4rem;
+}
+
+.paint {
+    color: red;
+}
+
+
+.ladder {
+    padding-top: 2rem;
+    margin-left: 8rem;
+}
+
+.up {
+    /* margin-left: 5rem; */
+    margin-top: 2rem;
+}
+
+.err {
+    text-align: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding-bottom: 2rem;
+}
+
+.forgot {
+    text-align: center;
+    color: red;
+
+}
+
+.image {
+    height: 24rem;
+}

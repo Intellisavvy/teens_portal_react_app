@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes } from 'react-router-dom';
 import './App.css';
 import { AppRoutes } from './components/AppRoutes';
-import TeenReg from './components/Body/Main/CreateAccounts/Teen';
+import TeenReg from './components/Body/Main/CreateAccounts';
+import ParentRegistration from './components/Body/Main/CreateAccounts/Parent/ParentRegistration';
 // import { AppRoutes } from './components/AppRoutes';
 import Footer from './components/Footer';
 import MainIndex from './components/Navbar/MainIndex';
@@ -20,7 +21,7 @@ function App() {
       {/* <Routes> */}
         {/* <AppRoutes /> */}
       {/* </Routes> */}
-
+      {/* <ParentRegistration /> */}
       <TeenReg />
 
 

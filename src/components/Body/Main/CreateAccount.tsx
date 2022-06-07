@@ -1,21 +1,17 @@
 import { Link } from "react-router-dom";
-import TeenReg from "./CreateAccounts/Teen";
-
-
-
 
 export const CreateAccount = () => {
     return (
-        <div>
+        <div style={{ textAlign: 'center', marginBottom: '23rem' }}>
             <ul>
                 <li>
                     <Link to='/teenregform' >Teen</Link>
                 </li>
                 <li>
-                    <Link to="/parent" >Parent</Link>
+                    <Link to="/parentregform" >Parent</Link>
                 </li>
                 <li>
-                    <Link to="/vendor" >Vendor</Link>
+                    <Link to="/vendorregform" >Vendor</Link>
                 </li>
             </ul>
         </div>

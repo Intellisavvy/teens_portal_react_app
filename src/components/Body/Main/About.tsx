@@ -1,4 +1,4 @@
  
 export const About = ()=> {
-    return <div>This is About Page</div>
+    return <div style={{ textAlign: 'center', marginBottom: '26.3rem' }}>This is About Page</div>
 }

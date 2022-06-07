@@ -1,7 +1,7 @@
 import {
     useRoutes,
 } from "react-router-dom";
-import { Login } from "../Body/Login";
+import { Login } from "../images/Login";
 import { About } from "../Body/Main/About";
 import { CreateAccount } from "../Body/Main/CreateAccount";
 import MainNavbar from "./Main/MainNavbar";

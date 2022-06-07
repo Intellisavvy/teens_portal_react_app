@@ -24,7 +24,7 @@ export default function Footer() {
     };
 
     return (
-        <AppBar position="static" style={{ backgroundColor: "#121212", bottom: "0", position: "fixed" }}>
+        <AppBar position="static" style={{ backgroundColor: "#121212", bottom: "0" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
