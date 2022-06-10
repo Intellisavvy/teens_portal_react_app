@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes } from 'react-router-dom';
 import './App.css';
+import TotalRouting from './components/AppRoutes/index2';
 import { AppRoutes } from './components/AppRoutes';
 import TeenReg from './components/Body/Main/CreateAccounts';
 import ParentRegistration from './components/Body/Main/CreateAccounts/Parent/ParentRegistration';
@@ -14,6 +15,7 @@ import VendorIndex from './components/Navbar/VendorIndex';
 function App() {
   return (
     <div className="App">
+      {/* <TotalRouting /> */}
       <MainIndex />
       {/* <ParentIndex />
       <TeenIndex />

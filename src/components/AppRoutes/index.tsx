@@ -5,6 +5,7 @@ import { Login } from "../images/Login";
 import { About } from "../Body/Main/About";
 import { CreateAccount } from "../Body/Main/CreateAccount";
 import MainNavbar from "./Main/MainNavbar";
+import { Home } from "../Body/Main/Home";
 
 export const AppRoutes = () => {
     return useRoutes([
@@ -14,7 +15,7 @@ export const AppRoutes = () => {
             children: [
                 {
                     path: "home",
-                    element: <MainNavbar />,
+                    element: <Home />,
                     children: [
                         {
                             path: "about",

@@ -65,14 +65,11 @@ export default function ParentRegister() {
                     <ButtonGroup
                         sx={{ borderRadius: 5, justifyContent: 'center', m: 2 }}
                     >
-                        <Link to='/login' className='link'>
-                            <Button
-                                sx={{ backgroundColor: '#f5f5f5', width: '10rem', border: 'none' }}
-                            >
-                                Login
-                            </Button>
-                        </Link>
-                        {/* <Link to='' */}
+                        <Button
+                            sx={{ backgroundColor: '#f5f5f5', width: '10rem' }}
+                        >
+                            <Link to='/login' className='link'>Login</Link>
+                        </Button>
                         <Button
                             variant='contained'
                             sx={{ width: '10rem' }}

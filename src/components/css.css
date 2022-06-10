@@ -58,11 +58,17 @@
     text-decoration: none;
     padding-bottom: 2rem;
 }
+.alignRight {
+    text-align: right;
+    margin-right: 20%;
 
+}
 .forgot {
-    text-align: center;
+    text-decoration: none;
     color: red;
-
+}
+.forgot:visited {
+    color:red
 }
 
 .image {
