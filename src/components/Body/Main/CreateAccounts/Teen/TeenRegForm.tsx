@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
+import TextField, { TextFieldProps } from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './../RegStyles.css';
 import { ButtonGroup, Checkbox, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextareaAutosize } from '@mui/material';
@@ -9,6 +9,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import ReactInputMask from 'react-input-mask';
+// import { height } from '@mui/system';
 
 
 
@@ -26,11 +28,11 @@ export default function Register() {
     var ValidateName = "^[A-Z a-z]+$";
     var ValidateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     var ValidatePassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
-    
-    const [value, setValue] = React.useState<Date | null >(null);
-    const mnDate = new Date(new Date().getFullYear()-18, new Date().getMonth(), new Date().getDate())
-    const mxDate = new Date(new Date().getFullYear()-12, new Date().getMonth(), new Date().getDate())
-  
+
+    const [value, setValue] = React.useState<Date | null>(null);
+    const mnDate = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate())
+    const mxDate = new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate())
+
 
     const [data, setData] = useState({
         FirstName: '',
@@ -113,11 +115,11 @@ export default function Register() {
                         <ButtonGroup
                             sx={{ justifyContent: 'center', m: 2 }}
                         >
-                                <Button
-                                    sx={{ backgroundColor: '#f5f5f5', width: '10rem' }}
-                                >
-                                    <Link to='/login' className='link'>Login</Link>
-                                </Button>
+                            <Button
+                                sx={{ backgroundColor: '#f5f5f5', width: '10rem' }}
+                            >
+                                <Link to='/login' className='link'>Login</Link>
+                            </Button>
                             <Button
                                 variant='contained'
                                 sx={{ width: '10rem' }}
@@ -129,6 +131,7 @@ export default function Register() {
                             <TextField
                                 required
                                 type={'text'}
+                                autoComplete='none'
                                 id="FName"
                                 label="First Name"
                                 name='FirstName'
@@ -139,6 +142,7 @@ export default function Register() {
                             <TextField
                                 required
                                 type={'text'}
+                                autoComplete='none'
                                 id="LName"
                                 label="Last Name"
                                 name='LastName'
@@ -147,13 +151,13 @@ export default function Register() {
                                 onChange={formInputValidation}
                             />
                         </div>
-                        { (FirstName.length == 0 || !FirstName.match(ValidateName)) || (LastName.length == 0 || !LastName.match(ValidateName)) ? 
-                            <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null }
+                        {(FirstName.length == 0 || !FirstName.match(ValidateName)) || (LastName.length == 0 || !LastName.match(ValidateName)) ?
+                            <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null}
 
                         {/* <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> */}
-                        {!FirstName.match(ValidateName) && FirstName.length != 0 ? <span style={{ color: 'red' }}>Enter valid First name, Allow characters only<br/></span> : null}
-                        {!LastName.match(ValidateName) && LastName.length != 0 ? <span style={{ color: 'red' }}>Enter valid Last name, Allow characters only<br/> </span> : null}
-                        {(FirstName.length < 2 || LastName.length < 2 ) && (FirstName.length != 0 || LastName.length != 0) ? <span style={{ color: 'red' }}>Name should contain minimum 2 characters</span> : null}
+                        {!FirstName.match(ValidateName) && FirstName.length != 0 ? <span style={{ color: 'red' }}>Enter valid First name, Allow characters only<br /></span> : null}
+                        {!LastName.match(ValidateName) && LastName.length != 0 ? <span style={{ color: 'red' }}>Enter valid Last name, Allow characters only<br /> </span> : null}
+                        {(FirstName.length < 2 || LastName.length < 2) && (FirstName.length != 0 || LastName.length != 0) ? <span style={{ color: 'red' }}>Name should contain minimum 2 characters</span> : null}
                         <div>
                             <TextField
                                 required
@@ -161,6 +165,7 @@ export default function Register() {
                                 label="Email ID"
                                 id="Email-ID"
                                 name='EmailID'
+                                autoComplete='none'
                                 value={EmailID}
                                 sx={{ width: '25rem', mt: 1.5 }}
                                 onChange={formInputValidation}
@@ -168,21 +173,28 @@ export default function Register() {
                             {!EmailID.match(ValidateEmail) && EmailID.length != 0 ? <p style={{ color: 'red' }}>Enter valid Email ID </p> : null}
                         </div>
                         <div>
-                            <TextField
-                                required
-                                type={'number'}
-                                label="Contact Number"
+                            <ReactInputMask
+                                mask='(999) 999-9999'
+                                type='text'
+                                autoComplete='none'
+                                placeholder="Contact Number"
                                 id="Contact-Number"
                                 name='ContactNumber'
                                 value={ContactNumber}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                style={{marginTop: '1rem', width: '23.5rem', height: '3rem',paddingLeft:'1rem' , borderColor: 'transparents'}}
+                                className="effect"
+                                // sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
-                            />
-                            {(ContactNumber.length < 10 || ContactNumber.length > 10) && ContactNumber.length != 0 ? <p style={{ color: 'red' }}>Enter valid Contact Number, It should be 10 digits</p> : null}
+                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField label='cc number' {...props}/>}
+                                // <TextField
+                                // />
+                                />
+                            {/* /> */}
+                            {/* </ReactInputMask> */}
+                            {/* {(ContactNumber.length < 14 || ContactNumber.length > 14) && ContactNumber.length != 0 ? <p style={{ color: 'red' }}>Enter valid Contact Number, It should be 10 digits</p> : null} */}
                         </div>
                         <div>
                             <TextField
-                                
                                 required
                                 type={'password'}
                                 label="Password"
@@ -197,7 +209,7 @@ export default function Register() {
                         </div>
                         <div>
                             <TextField
-                                
+
                                 required
                                 type={'password'}
                                 label="Confirm Password"
@@ -211,8 +223,8 @@ export default function Register() {
 
                         </div>
                         <div>
-                        <LocalizationProvider dateAdapter={AdapterDateFns} >
-                            <DatePicker 
+                            <LocalizationProvider dateAdapter={AdapterDateFns} >
+                                <DatePicker
                                     label="Date of Birth"
                                     value={value}
                                     minDate={mnDate}
@@ -220,22 +232,30 @@ export default function Register() {
                                     onChange={(newValue) => {
                                         setValue(newValue);
                                     }}
-                                    renderInput={(params) => <TextField {...params} sx={{ mt: 1.5, width: '25rem' }}/>}
+                                    renderInput={(params) => <TextField {...params} sx={{ mt: 1.5, width: '25rem' }} />}
                                 />
                             </LocalizationProvider>
                         </div>
                         <div>
-                            <TextField
-                                
-                                type={'number'}
+                            {/* <TextField
+                                sx={{ mt: 1.5, width: '25rem' }}
                                 label="SSN Number"
+                            > */}
+                        <ReactInputMask
+                                mask='999 99 9999'
+                                type={'text'}
+                                placeholder="SSN Number"
                                 id='SSN-Number'
+                                autoComplete='none'
                                 name='SSN'
                                 value={SSN}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                style={{marginTop: '1rem', width: '23.5rem', height: '3rem', paddingLeft: '1rem', borderColor: 'transparents'}}
+                                className="effect"
                                 onChange={formInputValidation}
-                            />
-                            {(SSN.length < 9 || SSN.length > 9 ) && SSN.length != 0 ? <p style={{ color: 'red' }}>Enter valid SSN Number, It should be 9 digits</p> : null}
+                            >
+                            </ReactInputMask>
+                            {/* </TextField> */}
+                            {/* {(SSN.length < 9 || SSN.length > 9) && SSN.length != 0 ? <p style={{ color: 'red' }}>Enter valid SSN Number, It should be 9 digits</p> : null} */}
 
                         </div>
                         <div>
@@ -285,26 +305,28 @@ export default function Register() {
                         </div> */}
                         <div>
                             <TextField
-                                
+
                                 required
                                 type={'text'}
                                 label="Parent/Guardian Name"
+                                autoComplete='none'
                                 id="P/G-Name"
                                 name='PGName'
                                 value={PGName}
                                 sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
                             />
-                            { PGName.length == 0 || !PGName.match(ValidateName) ? 
-                            <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null }
+                            {PGName.length == 0 || !PGName.match(ValidateName) ?
+                                <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null}
                             {!PGName.match(ValidateName) && PGName.length != 0 ? <p style={{ color: 'red' }}>Enter valid Parent/Guardian Name </p> : null}
                         </div>
                         <div>
                             <TextField
-                                
+
                                 required
                                 type={'number'}
                                 label="Parent/Guardian Number"
+                                autoComplete='none'
                                 id="P/G-Number"
                                 name='PGNumber'
                                 value={PGNumber}
@@ -315,10 +337,11 @@ export default function Register() {
                         </div>
                         <div>
                             <TextField
-                                
+
                                 required
                                 type={'email'}
                                 label="Parent/Guardian Email"
+                                autoComplete='none'
                                 id="P/G-Email"
                                 name='PGEmailID'
                                 value={PGEmailID}
@@ -333,22 +356,25 @@ export default function Register() {
                                 label="Address"
                                 name='Address'
                                 value={Address}
+                                autoComplete='none'
                                 onChange={formInputValidation}
                                 sx={{ mt: 1.5, width: '25rem' }}
-                                />
+                            />
                             <TextField
                                 required
                                 label="City"
                                 name='City'
                                 value={City}
+                                autoComplete='none'
                                 onChange={formInputValidation}
                                 sx={{ mt: 1.5, width: '25rem' }}
-                                />
+                            />
                             <TextField
                                 label="State"
                                 required
                                 name='State'
                                 value={State}
+                                autoComplete='none'
                                 sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
                             />
@@ -357,6 +383,7 @@ export default function Register() {
                                 required
                                 type={'number'}
                                 name='ZIPCode'
+                                autoComplete='none'
                                 value={ZIPCode}
                                 sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
@@ -364,7 +391,7 @@ export default function Register() {
                             {(ZIPCode.length < 5 || ZIPCode.length > 5) && ZIPCode.length != 0 ? <p style={{ color: 'red' }}>Enter valid ZIP Code, It should be 5 digits</p> : null}
                         </div>
                         <div className='Btext'>
-                            <Checkbox {...label} name='Checkbox' required/> I accept TERMS & CONDITIONS
+                            <Checkbox {...label} name='Checkbox' required /> I accept TERMS & CONDITIONS
                         </div>
                         <Button variant="contained" type={'submit'} sx={{ ml: '20rem', height: '3rem' }} >Register</Button>
                         <div className='Btext Blink'>

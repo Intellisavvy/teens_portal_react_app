@@ -44,3 +44,7 @@ fieldset {
 .PreText {
     font-size: xx-small;
 }
+
+.effect:hover {
+    border: 1px solid #3f45ebe9;
+}
