@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom"
+import AppHeader from "../Header"
 
 export const AppLayout = () => {
     return (
         <div>
-            <h1>public layout</h1>
+            <AppHeader />
             <Outlet />
+            <div>footer</div>
         </div>
     )
 }
