@@ -1,23 +1,15 @@
 
+import React from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import pic from './images/sign.png';
 import './css.css'
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Png from './images/login.png';
-import { useState } from 'react';
-import { useRef } from 'react';
 import TextField from '@mui/material/TextField';
 // import './App.css';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-
-import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { configure } from '@testing-library/react';
-import { color } from '@mui/system';
 import { Link } from 'react-router-dom';
 
 
@@ -62,6 +54,7 @@ function Signin() {
                                         label="Email ID"
                                         id="Email-ID"
                                         name='EmailID'
+                                        autoComplete='none'
                                         // value={EmailID}
                                         sx={{ width: '25rem', mt: 1.5 }}
                                     />

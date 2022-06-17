@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ReactInputMask from 'react-input-mask';
+import { LoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 // import { height } from '@mui/system';
 
 
@@ -29,9 +30,13 @@ export default function Register() {
     var ValidateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     var ValidatePassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
 
-    const [value, setValue] = React.useState<Date | null>(null);
+    const [dob, setDOB] = React.useState<Date | null>(null);
     const mnDate = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate())
     const mxDate = new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate())
+
+    // API Key
+    const APIKey = "AIzaSyAmBHhXsFA7Zs12luX1Ve6QMgC5dpq1RVI";
+
 
 
     const [data, setData] = useState({
@@ -52,7 +57,8 @@ export default function Register() {
         Address: '',
         City: '',
         State: '',
-        ZIPCode: ''
+        ZIPCode: '',
+        Location: ''
     })
     const {
         FirstName,
@@ -72,7 +78,8 @@ export default function Register() {
         Address,
         City,
         State,
-        ZIPCode
+        ZIPCode,
+        Location
     } = data;
     const formInputValidation = (e: any) => {
         setData({ ...data, [e.target.name]: e.target.value });
@@ -98,7 +105,8 @@ export default function Register() {
             Address: '',
             City: '',
             State: '',
-            ZIPCode: ''
+            ZIPCode: '',
+            Location: ''
         })
         alert('Your Registration Successfully Completed');
     }
@@ -181,16 +189,12 @@ export default function Register() {
                                 id="Contact-Number"
                                 name='ContactNumber'
                                 value={ContactNumber}
-                                style={{marginTop: '1rem', width: '23.5rem', height: '3rem',paddingLeft:'1rem' , borderColor: 'transparents'}}
+                                style={{ marginTop: '1rem', width: '23.5rem', height: '3rem', paddingLeft: '1rem', borderColor: 'transparents' }}
                                 className="effect"
                                 // sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
-                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField label='cc number' {...props}/>}
-                                // <TextField
-                                // />
-                                />
-                            {/* /> */}
-                            {/* </ReactInputMask> */}
+                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField label='cc number' {...props} />}
+                            />
                             {/* {(ContactNumber.length < 14 || ContactNumber.length > 14) && ContactNumber.length != 0 ? <p style={{ color: 'red' }}>Enter valid Contact Number, It should be 10 digits</p> : null} */}
                         </div>
                         <div>
@@ -226,11 +230,11 @@ export default function Register() {
                             <LocalizationProvider dateAdapter={AdapterDateFns} >
                                 <DatePicker
                                     label="Date of Birth"
-                                    value={value}
+                                    value={DOB}
                                     minDate={mnDate}
                                     maxDate={mxDate}
                                     onChange={(newValue) => {
-                                        setValue(newValue);
+                                        setDOB(newValue);
                                     }}
                                     renderInput={(params) => <TextField {...params} sx={{ mt: 1.5, width: '25rem' }} />}
                                 />
@@ -241,7 +245,7 @@ export default function Register() {
                                 sx={{ mt: 1.5, width: '25rem' }}
                                 label="SSN Number"
                             > */}
-                        <ReactInputMask
+                            <ReactInputMask
                                 mask='999 99 9999'
                                 type={'text'}
                                 placeholder="SSN Number"
@@ -249,7 +253,7 @@ export default function Register() {
                                 autoComplete='none'
                                 name='SSN'
                                 value={SSN}
-                                style={{marginTop: '1rem', width: '23.5rem', height: '3rem', paddingLeft: '1rem', borderColor: 'transparents'}}
+                                style={{ marginTop: '1rem', width: '23.5rem', height: '3rem', paddingLeft: '1rem', borderColor: 'transparents' }}
                                 className="effect"
                                 onChange={formInputValidation}
                             >
@@ -321,6 +325,24 @@ export default function Register() {
                             {!PGName.match(ValidateName) && PGName.length != 0 ? <p style={{ color: 'red' }}>Enter valid Parent/Guardian Name </p> : null}
                         </div>
                         <div>
+                            <ReactInputMask
+                                mask='(999) 999-9999'
+                                type='text'
+                                autoComplete='none'
+                                placeholder="Parent/Guardian Contact Number"
+                                id="P/G-Number"
+                                name='PGNumber'
+                                value={PGNumber}
+                                style={{ marginTop: '1rem', width: '23.5rem', height: '3rem', paddingLeft: '1rem', borderColor: 'transparents' }}
+                                className="effect"
+                                // sx={{ mt: 1.5, width: '25rem' }}
+                                onChange={formInputValidation}
+                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField label='cc number' {...props} />}
+                            />
+                            {/* {(ContactNumber.length < 14 || ContactNumber.length > 14) && ContactNumber.length != 0 ? <p style={{ color: 'red' }}>Enter valid Contact Number, It should be 10 digits</p> : null} */}
+                        </div>
+
+                        {/* <div>
                             <TextField
 
                                 required
@@ -334,7 +356,7 @@ export default function Register() {
                                 onChange={formInputValidation}
                             />
                             {(PGNumber.length < 10 || PGNumber.length > 10) && PGNumber.length != 0 ? <p style={{ color: 'red' }}>Enter valid Contact Number, It should be 10 digits</p> : null}
-                        </div>
+                        </div> */}
                         <div>
                             <TextField
 
@@ -360,7 +382,7 @@ export default function Register() {
                                 onChange={formInputValidation}
                                 sx={{ mt: 1.5, width: '25rem' }}
                             />
-                            <TextField
+                            {/* <TextField
                                 required
                                 label="City"
                                 name='City'
@@ -388,15 +410,34 @@ export default function Register() {
                                 sx={{ mt: 1.5, width: '25rem' }}
                                 onChange={formInputValidation}
                             />
-                            {(ZIPCode.length < 5 || ZIPCode.length > 5) && ZIPCode.length != 0 ? <p style={{ color: 'red' }}>Enter valid ZIP Code, It should be 5 digits</p> : null}
+                            {(ZIPCode.length < 5 || ZIPCode.length > 5) && ZIPCode.length != 0 ? <p style={{ color: 'red' }}>Enter valid ZIP Code, It should be 5 digits</p> : null} */}
                         </div>
+                        <div>
+                            <LoadScript
+                                googleMapsApiKey={APIKey}
+                                libraries={["places"]}
+                            >
+                                <StandaloneSearchBox>
+                                    <TextField
+                                        // label="Autofill Address"
+                                        placeholder="Autofill Address location"
+                                        type={'text'}
+                                        sx={{ mt: 1.5, width: '25rem' }}
+                                        value={Location}
+                                        name='Location'
+                                        id='Location'
+                                        onChange={formInputValidation}
+                                    />
+                                </StandaloneSearchBox>
+                            </LoadScript>
+                        </div>
+
                         <div className='Btext'>
                             <Checkbox {...label} name='Checkbox' required /> I accept TERMS & CONDITIONS
                         </div>
                         <Button variant="contained" type={'submit'} sx={{ ml: '20rem', height: '3rem' }} >Register</Button>
                         <div className='Btext Blink'>
                             Already a User <Link to="/login">Sign IN</Link>
-
                         </div>
                     </form>
                 </Box>

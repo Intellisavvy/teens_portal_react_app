@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Image123 from '../../../../images/reg.png';
+import RegImg from '../../../../images/reg.png';
 import Register from './TeenRegForm';
 import './../RegStyles.css';
 
@@ -31,7 +31,7 @@ export default function BasicGrid() {
                     <span className='PicHead'>
                         Find the job and grow your career
                     </span>
-                    <img src={Image123} />
+                    <img src={RegImg} />
                 </Grid>
 
                 <Grid item md={7}>
