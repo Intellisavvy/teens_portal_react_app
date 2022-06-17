@@ -83,7 +83,7 @@ export default function ParentRegister() {
                             disabled
                             type={'text'}
                             id="PName"
-                            label="Parent Full Name"
+                            placeholder="Parent Full Name"
                             name='ParentName'
                             value={ParentName}
                             sx={{ width: '25rem', mt: 1.5 }}
@@ -94,7 +94,7 @@ export default function ParentRegister() {
                             required
                             disabled
                             type={'email'}
-                            label="Parent Email ID"
+                            placeholder="Parent Email ID"
                             id="Parent-Email-ID"
                             name='PEmailID'
                             value={ParentEmailID}
@@ -106,7 +106,7 @@ export default function ParentRegister() {
                             required
                             disabled
                             type={'number'}
-                            label="Parent Contact Number"
+                            placeholder="Parent Contact Number"
                             id="Parent-Contact-Number"
                             name='ParentContactNumber'
                             value={ParentContactNumber}
@@ -117,7 +117,7 @@ export default function ParentRegister() {
                         <TextField
                             required
                             type={'password'}
-                            label="Password"
+                            placeholder="Password"
                             id="Password"
                             name='ParentPassword'
                             value={ParentPassword}
@@ -131,7 +131,7 @@ export default function ParentRegister() {
                             fullWidth
                             required
                             type={'text'}
-                            label="Confirm Password"
+                            placeholder="Confirm Password"
                             id="Confirm-Password"
                             name='ParentConfirmPassword'
                             value={ParentConfirmPassword}

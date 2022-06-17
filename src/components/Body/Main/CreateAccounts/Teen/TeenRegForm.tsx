@@ -37,6 +37,13 @@ export default function Register() {
     // API Key
     const APIKey = "AIzaSyAmBHhXsFA7Zs12luX1Ve6QMgC5dpq1RVI";
 
+    const [searchBox, setSearchBox ] = useState('');
+
+    const onAddress = (ref: any) => {
+        setSearchBox(ref)
+    };
+
+
 
 
     const [data, setData] = useState({
@@ -141,7 +148,8 @@ export default function Register() {
                                 type={'text'}
                                 autoComplete='none'
                                 id="FName"
-                                label="First Name"
+                                // label="First Name"
+                                placeholder="First Name"
                                 name='FirstName'
                                 value={FirstName}
                                 sx={{ width: '12.2rem', mr: 0.3, mt: 1.5 }}
@@ -152,7 +160,8 @@ export default function Register() {
                                 type={'text'}
                                 autoComplete='none'
                                 id="LName"
-                                label="Last Name"
+                                // label="Last Name"
+                                placeholder="Last Name"
                                 name='LastName'
                                 value={LastName}
                                 sx={{ width: '12.2rem', ml: 0.3, mt: 1.5 }}
@@ -170,7 +179,8 @@ export default function Register() {
                             <TextField
                                 required
                                 type={'email'}
-                                label="Email ID"
+                                // label="Email ID"
+                                placeholder="Email ID"
                                 id="Email-ID"
                                 name='EmailID'
                                 autoComplete='none'
@@ -201,7 +211,8 @@ export default function Register() {
                             <TextField
                                 required
                                 type={'password'}
-                                label="Password"
+                                // label="Password"
+                                placeholder="Password"
                                 id="Password"
                                 name='Password'
                                 value={Password}
@@ -216,7 +227,8 @@ export default function Register() {
 
                                 required
                                 type={'password'}
-                                label="Confirm Password"
+                                // label="Confirm Password"
+                                placeholder="Confirm Password"
                                 id="Confirm-Password"
                                 name='ConfirmPassword'
                                 value={ConfirmPassword}
@@ -230,7 +242,8 @@ export default function Register() {
                             <LocalizationProvider dateAdapter={AdapterDateFns} >
                                 <DatePicker
                                     label="Date of Birth"
-                                    value={DOB}
+                                    // placeholder="Date of Birth"
+                                    value={dob}
                                     minDate={mnDate}
                                     maxDate={mxDate}
                                     onChange={(newValue) => {
@@ -312,7 +325,8 @@ export default function Register() {
 
                                 required
                                 type={'text'}
-                                label="Parent/Guardian Name"
+                                // label="Parent/Guardian Name"
+                                placeholder="Parent/Guardian Name"
                                 autoComplete='none'
                                 id="P/G-Name"
                                 name='PGName'
@@ -362,7 +376,8 @@ export default function Register() {
 
                                 required
                                 type={'email'}
-                                label="Parent/Guardian Email"
+                                // label="Parent/Guardian Email"
+                                placeholder="Parent/Guardian Email"
                                 autoComplete='none'
                                 id="P/G-Email"
                                 name='PGEmailID'
@@ -375,7 +390,8 @@ export default function Register() {
                         <div>
                             <TextField
                                 required
-                                label="Address"
+                                // label="Address"
+                                placeholder="Address"
                                 name='Address'
                                 value={Address}
                                 autoComplete='none'
@@ -417,16 +433,18 @@ export default function Register() {
                                 googleMapsApiKey={APIKey}
                                 libraries={["places"]}
                             >
-                                <StandaloneSearchBox>
+                                <StandaloneSearchBox
+                                    onLoad={onAddress}
+                                >
                                     <TextField
                                         // label="Autofill Address"
                                         placeholder="Autofill Address location"
                                         type={'text'}
                                         sx={{ mt: 1.5, width: '25rem' }}
-                                        value={Location}
-                                        name='Location'
+                                        // value={Location}
+                                        // name='Location'
                                         id='Location'
-                                        onChange={formInputValidation}
+                                        // onChange={formInputValidation}
                                     />
                                 </StandaloneSearchBox>
                             </LoadScript>
