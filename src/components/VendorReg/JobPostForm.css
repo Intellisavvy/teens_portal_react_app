@@ -1,0 +1,91 @@
+.nav {
+  margin-left: 3rem;
+}
+
+/* .side {
+  margin-left: 8rem;
+} */
+.VRForm {
+  /* margin-left: 3rem; */
+}
+
+.button {
+  margin-left: 30rem;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* .sall {
+  margin-top: 3rem;
+   margin-left: 3rem; *
+} */
+.FIAlignment {
+  margin-left: 5rem;
+  text-align: left;
+}
+.VRFormInput {
+  margin-top: 1rem;
+}
+
+.BoxContainer {
+  box-shadow: 0 0 10px #2270b44d;
+  margin: auto;
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 0.875rem;
+}
+
+/* .well {
+  -webkit-box-shadow: 0 0 10px #2370b5;
+  -moz-box-shadow: 0 0 10px #2370b5;
+  box-shadow: 0 0 15px #2270b44d;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-left: auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+} */
+.LTFWidth {
+  width: 9rem;
+  margin-right: .5rem;
+}
+.DRFeild {
+  margin-right: 0.5rem;
+  width: 14rem;
+}
+.size {
+  width: 29.5rem;
+  height: 3rem;
+}
+
+.FIFWidth {
+  width: 30rem;
+}
+
+.slow {
+  margin-left: 2rem;
+}
+
+.long {
+  display: flex;
+}
+
+.flow {
+  width: 9rem;
+}
+
+.flip {
+  margin-left: 1.5rem;
+}
+
+.txt {
+  margin-top: 1rem;
+}
+
+.vern {
+  margin-top: 2rem;
+}
+.ErrorMsg {
+  color: red
+}

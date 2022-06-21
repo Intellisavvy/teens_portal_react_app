@@ -155,7 +155,9 @@ export const AppLayout = () => {
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Box style={{height: '85vh'}}>
+                <Box
+                style={{height: '85vh'}}
+                >
 
                 <Outlet />
                 </Box>

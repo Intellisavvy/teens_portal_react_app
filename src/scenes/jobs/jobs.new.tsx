@@ -1,7 +1,10 @@
+import JobPostForm from "../../components/VendorReg/JobPostForm"
 
 export const JobPost = () => {
 
     return(
-        <div>new job post here</div>
+        <div>
+            <JobPostForm />
+        </div>
     )
 }
