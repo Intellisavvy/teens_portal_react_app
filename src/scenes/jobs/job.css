@@ -1,0 +1,55 @@
+.well {
+ 
+    /* -webkit-box-shadow: 0 0 10px #2370b5;
+    -moz-box-shadow: 0 0 10px #2370b5;
+    box-shadow: 0 0 15px #2270b44d; */
+    border:3px solid black;
+    border-radius: 10px;
+    font-size:0.875rem;
+    font-weight:700 ;
+    width:60rem;
+    /* height: 30rem; */
+    margin-left:7rem ;
+    margin-top: 5rem;
+    /* padding-bottom: 2rem; */
+  }
+ .size{
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.614);
+   
+ }
+ 
+ .name{
+    font-size: 1.3rem;
+    padding-left: 1.4rem;
+ }
+ .title{
+    font-size: 1.3rem;
+    padding-left: 8.4rem;
+ }
+ .jd{
+    font-size: 1.3rem;
+    padding-left: 3.8rem;
+    text-align: justify;
+    padding-right: 1rem;
+ }
+ .payment{
+    font-size: 1.3rem;
+    padding-left: 7.8rem;
+ }
+ .date{
+    font-size: 1.3rem;
+    padding-left: 6.2rem;
+ }
+ .time{
+    font-size: 1.3rem;
+    padding-left: 5rem;
+ }
+ .location{
+    font-size: 1.3rem;
+    padding-left: 5.5rem;
+ }
+ .contact{
+    font-size: 1.3rem;
+    padding-left: 4.2rem;
+ }
