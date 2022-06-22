@@ -3,21 +3,28 @@ import {
 } from "react-router-dom";
 import { CustomerRegistration } from "../../scenes/customer/customer.register";
 import { Dashboard } from "../../scenes/dashboard";
-import { Home } from "../../scenes/home";
+import { Home } from "../../scenes/public/home";
 import { JobsList } from "../../scenes/jobs/jobs.list";
 import { JobPost } from "../../scenes/jobs/jobs.new";
 import { ParentRegister } from "../../scenes/parent/parent.register";
-import { Profile } from "../../scenes/profile/profile";
+import { Profile } from "../../scenes/common/profile/profile";
 import { TeenRegistration } from "../../scenes/teen/teen.registration";
 import { UserCard } from "../../scenes/users/UserCard";
 import { Users } from "../../scenes/users/Users";
 import { AppLayout } from "../Layouts/AppLayout";
+import { PublicLayout } from "../../scenes/public/public.layout";
+import { AppliedJobs } from "../../scenes/teen/appliedJobs/appliedJobs";
+import { JobSearch } from "../../scenes/teen/jobSearch/jobSearch";
 
 export const AppRoutes = () => {
     return useRoutes([
         {
-            path: 'home',
-            element: <Home />
+            path: '',
+            element: <PublicLayout />,
+            children: [{
+                path: '/',
+                element: <Home />,
+            }]
         },
         {
             path: 'register',
@@ -37,24 +44,16 @@ export const AppRoutes = () => {
             ]
         },
         {
-            path: '/teen',
+            path: 'teen',
             element: <AppLayout />,
             children: [
                 {
                     path: "jobs",
-                    element: <JobsList />
+                    element: <AppliedJobs />
                 },
                 {
-                    path: "jobpost",
-                    element: <JobPost />
-                },
-                {
-                    path: "home",
-                    element: <Home />
-                },
-                {
-                    path: "dashboard",
-                    element: <Dashboard />
+                    path: "search",
+                    element: <JobSearch />
                 },
                 {
                     path: "dashboard",
@@ -75,6 +74,20 @@ export const AppRoutes = () => {
                     element: <Profile />,
                 }
             ],
+        },
+        {
+            path:'vendor',
+            element: <AppLayout />,
+            children:[
+                {
+                    path: "jobs",
+                    element: <JobsList />
+                },
+                {
+                    path: "jobpost",
+                    element: <JobPost />
+                },
+            ]
         }
     ])
 }
