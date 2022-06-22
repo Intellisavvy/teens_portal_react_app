@@ -1,0 +1,16 @@
+.link {
+    text-decoration: none;
+}
+
+.errorMsg {
+    color: red;
+}
+
+.reactInputMask {
+    margin-top: 1rem;
+    width: 23.5rem;
+    height: 3.3rem;
+    padding-left: 1rem;
+    border: 0.1px solid #00000041;
+    border-radius: 5px;
+}
