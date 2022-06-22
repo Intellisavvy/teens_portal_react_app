@@ -6,7 +6,6 @@ import './job.css';
 
 export const JobCard = () => {
    return <div>
-      {/* this is job card */}
       {
          Data.map(hy => {
             return (
