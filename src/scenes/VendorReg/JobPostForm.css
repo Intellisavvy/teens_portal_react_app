@@ -2,32 +2,21 @@
   margin-left: 3rem;
 }
 
-/* .side {
-  margin-left: 8rem;
-} */
-.VRForm {
-  /* margin-left: 3rem; */
-}
-
 .button {
   margin-left: 30rem;
   margin-right: 3rem;
   margin-bottom: 2rem;
 }
 
-/* .sall {
-  margin-top: 3rem;
-   margin-left: 3rem; *
-} */
-.FIAlignment {
+.fiAlignment {
   margin-left: 5rem;
   text-align: left;
 }
-.VRFormInput {
+.vrFormInput {
   margin-top: 1rem;
 }
 
-.BoxContainer {
+.boxContainer {
   box-shadow: 0 0 10px #2270b44d;
   margin: auto;
   font-weight: 700;
@@ -35,22 +24,11 @@
   font-size: 0.875rem;
 }
 
-/* .well {
-  -webkit-box-shadow: 0 0 10px #2370b5;
-  -moz-box-shadow: 0 0 10px #2370b5;
-  box-shadow: 0 0 15px #2270b44d;
-  border-radius: 10px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  margin-left: auto;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-} */
-.LTFWidth {
+.ltfWidth {
   width: 9rem;
   margin-right: .5rem;
 }
-.DRFeild {
+.drFeild {
   margin-right: 0.5rem;
   width: 14rem;
 }
@@ -59,7 +37,7 @@
   height: 3rem;
 }
 
-.FIFWidth {
+.fifWidth {
   width: 30rem;
 }
 
@@ -86,6 +64,21 @@
 .vern {
   margin-top: 2rem;
 }
-.ErrorMsg {
+.errorMsg {
   color: red
+}
+
+
+
+.ml5 {
+  margin-left: 5rem;
+}
+.ml_15 {
+  margin-left: -15rem;
+}
+.ml_25 {
+  margin-left: -25rem;
+}
+.d_flex {
+  display: flex;
 }

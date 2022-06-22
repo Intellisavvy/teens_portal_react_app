@@ -6,19 +6,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import './JobPostForm.css';
 import { Checkbox, Select, MenuItem, BadgeMark, TextFieldProps } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
+import {Grid, Box } from '@mui/material';
 import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { DateRangePicker, LocalizationProvider, DateRange } from '@mui/lab';
-
-
-
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
 
 const JobPostForm = (props: any) => {
 
@@ -26,9 +20,8 @@ const JobPostForm = (props: any) => {
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
 
 
-
     const [check, setCheck] = React.useState(false);
-    const [data, setdata] = useState({
+    const [data, setData] = useState({
         VenueName: '',
         TypeOfPostAppliedFor: '',
         JobDescription: '',
@@ -47,12 +40,8 @@ const JobPostForm = (props: any) => {
     })
 
 
-    const [love, setlove] = useState('');
-    // const Post=e=>{
-    //     const hike=e.target.value;
-    //     setlove(hike);
-    // }
-    const checkboxref = useRef('');
+    const [loadingValue, setLoadingValue] = useState('');
+    const checkBoxRef = useRef('');
     const {
         VenueName,
         TypeOfPostAppliedFor,
@@ -69,13 +58,11 @@ const JobPostForm = (props: any) => {
         ZipCode,
         ContactingDetails
     } = data;
-    const [checkbox, setCheckBox] = useState(false);
+    const [checkBox, setCheckBox] = useState(false);
     const onJobPostInput = (e: any) => {
-        // setcheckbox(checkboxref.current.checked);
-
-        setdata({ ...data, [e.target.name]: e.target.value });
-        const hike = e.target.value;
-        setlove(hike);
+        setData({ ...data, [e.target.name]: e.target.value });
+        const LoadValue = e.target.value;
+        setLoadingValue(LoadValue);
     };
 
 
@@ -97,7 +84,7 @@ const JobPostForm = (props: any) => {
             ZipCode,
             ContactingDetails
         );
-        setdata({
+        setData({
             VenueName: '',
             TypeOfPostAppliedFor: '',
             JobDescription: '',
@@ -119,11 +106,11 @@ const JobPostForm = (props: any) => {
     return (
         <div >
             <Grid container>
-                <Box className='BoxContainer'>
+                <Box className='boxContainer'>
                     <h1>JOB POSTING FORM</h1>
 
-                    <form onSubmit={onVRFormSubmit} className="VRForm">
-                        <div className="VRFormInput">
+                    <form onSubmit={onVRFormSubmit} className="vrForm">
+                        <div className="vrFormInput">
                             <TextField
                                 name='VenueName'
                                 value={VenueName}
@@ -131,23 +118,15 @@ const JobPostForm = (props: any) => {
                                 type={'text'}
                                 sx={{ mt: 3 }}
                                 onChange={onJobPostInput}
-                                className="FIFWidth"
+                                className="fifWidth"
                             />
                             {(VenueName.length < 0 || !VenueName.match(ValidateName)) ?
-                                <pre className='ErrorMsg'>The name should start with UpperCase and follow with LowerCase</pre> : null}
+                                <pre className='errorMsg'>The name should start with UpperCase and follow with LowerCase</pre> : null}
 
                         </div>
-                        <div className="VRFormInput">
+                        <div className="vrFormInput">
                             <div >
-                                <label style={{ marginLeft: '-26rem' }}><b>JOB Title</b></label>
-                                {/* {love === 70 && 
-                                (
-                                    <div >
-                                        <TextField placeholder='Enter job category ' value="sel" />
-                                        </div>
-                                    
-                                )
-                                } */}
+                                <label className='ml_25'><b>JOB Title</b></label>
                             </div>
                             <div >
                                 <Select
@@ -156,7 +135,7 @@ const JobPostForm = (props: any) => {
                                     value={TypeOfPostAppliedFor}
                                     name="TypeOfPostAppliedFor"
                                     onChange={onJobPostInput}
-                                    className="FIFWidth"
+                                    className="fifWidth"
                                 >
                                     <MenuItem value="none">---None---</MenuItem>
                                     <MenuItem value="Babysiter">Baby Sitter</MenuItem>
@@ -180,7 +159,7 @@ const JobPostForm = (props: any) => {
 
                         <div >
                             <div>
-                                <label style={{ marginLeft: '-23rem' }}><b>Job Description</b></label>
+                                <label className='ml_25'><b>Job Description</b></label>
                             </div>
                             <div>
                                 <textarea
@@ -188,17 +167,18 @@ const JobPostForm = (props: any) => {
                                     name="JobDescription"
                                     onChange={onJobPostInput}
                                     required
-                                    className='FIFWidth'
+                                    className='fifWidth'
                                 />
                             </div>
                         </div>
-                        <div className='FIAlignment'>
+                        <div className='fiAlignment'>
                             <label><b>Payment</b></label>
                             <div>
                                 <FormControlLabel
                                     label="CashPayment"
                                     control={<Checkbox />}
-                                    style={{ marginLeft: "3%" }}
+                                    // style={{ marginLeft: "3%" }}
+                                    sx={{ ml: 3 }}
                                     name="CashPayment"
                                     value="CashPayment"
                                     onChange={onJobPostInput}
@@ -206,7 +186,8 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="NetBanking"
                                     control={<Checkbox />}
-                                    style={{ marginLeft: "3%" }}
+                                    // style={{ marginLeft: "3%" }}
+                                    sx={{ ml: 3 }}
                                     name="NetBanking"
                                     value="NetBanking"
                                     onChange={onJobPostInput}
@@ -214,7 +195,8 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="ChequePayment"
                                     control={<Checkbox />}
-                                    style={{ marginLeft: "3%" }}
+                                    // style={{ marginLeft: "3%" }}
+                                    sx={{ ml: 3 }}
                                     name="ChequePayment"
                                     value="ChequePayment"
                                     onChange={onJobPostInput}
@@ -222,7 +204,8 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="CashApp/ZelleApp/PayPal"
                                     control={<Checkbox />}
-                                    style={{ marginLeft: "3%" }}
+                                    // style={{ marginLeft: "3%" }}
+                                    sx={{ ml: 3 }}
                                     name="CashApp_ZelleApp_PayPal"
                                     value="CashApp/ZelleApp/PayPal"
                                     onChange={onJobPostInput}
@@ -231,27 +214,10 @@ const JobPostForm = (props: any) => {
                         </div>
                         <div >
                             <div>
-                                <label style={{ marginLeft: '-23rem' }}><b>Total Time Period</b></label>
+                                <label className='ml_25'><b>Total Time Period</b></label>
                             </div>
-                            <div style={{ display: 'flex', marginLeft: '4.5rem' }}>
+                            <div className='ml5 d_flex'>
                                 <div >
-                                    {/* <TextField
-                                        value={WorkStartingDate}
-                                        name="WorkStartingDate"
-                                        onChange={onJobPostInput}
-                                        className='DRFeild'
-                                        type={'date'}
-                                    />
-                                </div>
-                                <div className='flip'>
-                                    <TextField
-                                        type={'date'}
-                                        value={WorkEndingDate}
-                                        name="WorkEndingDate"
-                                        onChange={onJobPostInput}
-                                        className='DRFeild'
-                                    />
-                                </div> */}
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DateRangePicker
                                             startText=""
@@ -274,26 +240,26 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div >
                                 <div>
-                                    <label style={{ marginLeft: '-24.5rem' }}><b>Work Timings</b></label>
+                                    <label className='ml_25'><b>Work Timings</b></label>
                                 </div>
                                 <TextField
                                     value={WorkingTime}
                                     name="WorkingTime"
                                     onChange={onJobPostInput}
-                                    className="FIFWidth"
+                                    className="fifWidth"
                                 />
                             </div>
                             <div >
                                 <div>
-                                    <label style={{ marginLeft: '-25rem' }}><b>Job Location</b></label>
+                                    <label className='ml_25'><b>Job Location</b></label>
                                 </div>
-                                <div style={{ display: 'flex', marginLeft: '5rem' }}>
+                                <div className='ml5 d_flex'>
                                     <div >
                                         <TextField
                                             value={LocatedState}
                                             name="LocatedState"
                                             onChange={onJobPostInput}
-                                            className='LTFWidth'
+                                            className='ltfWidth'
                                             placeholder='State' />
 
                                     </div>
@@ -303,7 +269,7 @@ const JobPostForm = (props: any) => {
                                             value={LocatedCity}
                                             name="LocatedCity"
                                             onChange={onJobPostInput}
-                                            className='LTFWidth'
+                                            className='ltfWidth'
                                         />
                                     </div>
                                     <div className='flip'>
@@ -314,26 +280,25 @@ const JobPostForm = (props: any) => {
                                             value={ZipCode}
                                             name="ZipCode"
                                             onChange={onJobPostInput}
-                                            className='LTFWidth'
+                                            className='ltfWidth'
                                         />
                                     </div>
                                 </div>
                             </div>
-                            <div className='FIFWidth'>
+                            <div className='fifWidth'>
                                 <div>
-                                    <label style={{ marginLeft: '-14rem' }}><b>Contact Details</b></label><br />
+                                    <label className='ml_15'><b>Contact Details</b></label><br />
                                 </div>
                                 <div>
                                     <textarea
                                         value={ContactingDetails}
                                         name="ContactingDetails"
-                                        className='FIFWidth'
+                                        className='fifWidth ml5'
                                         onChange={onJobPostInput}
-                                        style={{ marginLeft: '5rem' }}
                                     />
                                 </div>
                             </div>
-                            <div style={{ marginLeft: '-15rem' }}>
+                            <div className='ml_15'>
                                 <input type={'checkbox'} /> I accept TERMS & CONDITIONS
 
                             </div>
