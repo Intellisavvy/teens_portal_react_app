@@ -1,0 +1,76 @@
+.down
+{
+  margin-top: 1rem;
+} 
+.direction{
+  padding-top: 2rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.well {
+ 
+  -webkit-box-shadow: 0 0 10px #2370b5;
+  -moz-box-shadow: 0 0 10px #2370b5;
+  box-shadow: 0 0 15px #2270b44d;
+  border-radius: 10px;
+  font-size:0.875rem;
+  font-weight:700 ;
+  width:35rem;
+  margin-left:25rem ;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+  .top{
+    margin-top: 2rem;
+    margin-left: 3rem;
+  }
+  .fieldsize{
+    width: 25rem;
+    margin-left: 5rem;
+  }
+  .left{
+   
+    padding-bottom: 1rem;
+  }
+  .height{
+    height: 28rem;
+  } 
+ .float
+ {
+   margin-bottom: 4rem;
+   font-size: 2rem;
+   margin-left: 4rem;
+ }
+ .paint
+ {
+   color: red;
+ }
+ .space{
+   margin-left: 5rem;
+   margin-top: 1rem;
+ }
+ .ladder{
+   padding-top: 2rem;
+   margin-left: 8rem;
+ }
+ .up
+ {
+   margin-left: 5rem;
+   margin-top: 2rem;
+ }
+ .err{
+   text-align: center;
+   font-size: 1.2rem;
+   text-decoration: none;
+   padding-bottom:  2rem;
+ }
+ .forgot{
+   text-align: center;
+   color: red;
+
+ }
+ .image{
+   height: 22rem;
+ }
+ 
