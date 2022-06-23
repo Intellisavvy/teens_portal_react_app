@@ -1,10 +1,19 @@
 
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import TextField, { TextFieldProps } from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { ButtonGroup, Checkbox, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextareaAutosize } from '@mui/material';
+import {
+    Box,
+    Button,
+    ButtonGroup,
+    Checkbox,
+    FormControl,
+    FormControlLabel,
+    FormLabel,
+    Paper,
+    Radio,
+    RadioGroup,
+    TextField,
+    TextFieldProps
+} from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DatePicker, LocalizationProvider } from '@mui/lab';
@@ -35,7 +44,8 @@ export default function TeenRegistration() {
     const mxDate = new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate())
 
     // API Key
-    const APIKey = "AIzaSyAmBHhXsFA7Zs12luX1Ve6QMgC5dpq1RVI";
+    // const APIKey = "AIzaSyAmBHhXsFA7Zs12luX1Ve6QMgC5dpq1RVI";
+    const APIKey = "AIzaSyCFtEPoeZg_ktUzAubSjwtHLCQCQA2LAdo";
 
     const [searchBox, setSearchBox ] = useState('');
 
@@ -115,7 +125,6 @@ export default function TeenRegistration() {
             ZIPCode: '',
             Location: ''
         })
-        alert('Your Registration Successfully Completed');
     }
 
 
@@ -123,21 +132,25 @@ export default function TeenRegistration() {
         <div>
             <Box
                 component="form"
-                sx={{ width: '35rem', boxShadow: '0 0 15px #2270b44d', margin: 'auto' }}
+                className='boxContainer'
             >
-                <Box sx={{ mb: '5rem', mt: 2 }}>
+                <Box 
+                className='boxBody'
+                mt={2} mb={5}
+                >
                     <form onSubmit={formDetails}>
                         <ButtonGroup
-                            sx={{ justifyContent: 'center', m: 2 }}
+                        className='buttonGroup'                        
+                            // sx={{ justifyContent: 'center', m: 2 }}
                         >
                             <Button
-                                sx={{ backgroundColor: '#f5f5f5', width: '10rem' }}
+                            className='btnWidth btnBGColor'
                             >
                                 <Link to='' className='link'>Login</Link>
                             </Button>
                             <Button
                                 variant='contained'
-                                sx={{ width: '10rem' }}
+                                className='btnWidth'
                             >
                                 Registration
                             </Button>
@@ -151,8 +164,9 @@ export default function TeenRegistration() {
                                 placeholder="First Name"
                                 name='FirstName'
                                 value={FirstName}
-                                sx={{ width: '12.2rem', mr: 0.3, mt: 1.5 }}
+                                sx={{ mr: 0.3, mt: 1.5 }}
                                 onChange={formInputValidation}
+                                className='textFeildNameSize'
                             />
                             <TextField
                                 required
@@ -162,7 +176,8 @@ export default function TeenRegistration() {
                                 placeholder="Last Name"
                                 name='LastName'
                                 value={LastName}
-                                sx={{ width: '12.2rem', ml: 0.3, mt: 1.5 }}
+                                sx={{ ml: 0.3, mt: 1.5 }}
+                                className='textFeildNameSize'
                                 onChange={formInputValidation}
                             />
                         </div>
@@ -181,7 +196,8 @@ export default function TeenRegistration() {
                                 name='EmailID'
                                 autoComplete='none'
                                 value={EmailID}
-                                sx={{ width: '25rem', mt: 1.5 }}
+                                className='textFeildSize'
+                                sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
                             {!EmailID.match(ValidateEmail) && EmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
@@ -208,7 +224,8 @@ export default function TeenRegistration() {
                                 id="Password"
                                 name='Password'
                                 value={Password}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                sx={{ mt: 1.5 }}
+                                className='textFeildSize'
                                 onChange={formInputValidation}
                             />
                             {(Password.length < 8 || Password.length > 15) && Password.length != 0 ? <p className='errorMsg'>Contains characters min 8  and max 14 </p> : null}
@@ -216,7 +233,6 @@ export default function TeenRegistration() {
                         </div>
                         <div>
                             <TextField
-
                                 required
                                 type={'password'}
                                 placeholder="Confirm Password"
@@ -224,7 +240,8 @@ export default function TeenRegistration() {
                                 name='ConfirmPassword'
                                 value={ConfirmPassword}
                                 onChange={formInputValidation}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                sx={{ mt: 1.5 }}
+                                className='textFeildSize'
                             />
                             {Password != ConfirmPassword ? <p className='errorMsg'>Password is not matched</p> : null}
 
@@ -239,8 +256,7 @@ export default function TeenRegistration() {
                                     onChange={(newValue) => {
                                         setDOB(newValue);
                                     }}
-                                    renderInput={(params) => <TextField {...params} sx={{ mt: 1.5, width: '25rem' }} />}
-                                />
+                                    renderInput={(params) => <TextField {...params} className='textFeildSize' sx={{ mt: 1.5}} />}                                />
                             </LocalizationProvider>
                         </div>
                         <div>
@@ -279,7 +295,8 @@ export default function TeenRegistration() {
                                 id="P/G-Name"
                                 name='PGName'
                                 value={PGName}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                className='textFeildSize'
+                                sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
                             {PGName.length == 0 || !PGName.match(ValidateName) ?
@@ -310,7 +327,8 @@ export default function TeenRegistration() {
                                 id="P/G-Email"
                                 name='PGEmailID'
                                 value={PGEmailID}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                className='textFeildSize'
+                                sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
                             {!PGEmailID.match(ValidateEmail) && PGEmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
@@ -323,7 +341,8 @@ export default function TeenRegistration() {
                                 value={Address}
                                 autoComplete='none'
                                 onChange={formInputValidation}
-                                sx={{ mt: 1.5, width: '25rem' }}
+                                className='textFeildSize'
+                                sx={{ mt: 1.5 }}
                             />
                         </div>
                         <div>
@@ -337,18 +356,19 @@ export default function TeenRegistration() {
                                     <TextField
                                         placeholder="Autofill Address location"
                                         type={'text'}
-                                        sx={{ mt: 1.5, width: '25rem' }}
+                                        className='textFeildSize'
+                                        sx={{ mt: 1.5 }}
                                         id='Location'
                                     />
                                 </StandaloneSearchBox>
                             </LoadScript>
                         </div>
 
-                        <div className='Btext'>
-                            <Checkbox {...label} name='Checkbox' required  sx={{ ml: -20 }}/> I accept TERMS & CONDITIONS
+                        <div>
+                            <Checkbox {...label} name='Checkbox' required sx={{ ml: -20 }} /> I accept TERMS & CONDITIONS
                         </div>
-                        <Button variant="contained" type={'submit'} sx={{ ml: '20rem', height: '3rem' }} >Register</Button>
-                        <div className='Btext Blink'>
+                        <Button variant="contained" type={'submit'} className='btnSubmit' >Register</Button>
+                        <div className='bLink'>
                             Already a User <Link to="" className='link'>Sign IN</Link>
                         </div>
                     </form>

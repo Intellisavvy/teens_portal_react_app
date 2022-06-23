@@ -50,7 +50,6 @@ export default function ParentRegister() {
             ParentPassword: '',
             ParentConfirmPassword: ''
         })
-        alert('Your Registration Successfully Completed')
     }
 
 
@@ -58,26 +57,28 @@ export default function ParentRegister() {
         <div>
             <Box
                 component="form"
-                sx={{ width: '35rem', boxShadow: '0 0 15px #2270b44d', pb: 2, margin: 'auto', mt: 5, mb: 2 }}
+                className='boxContainer'
+                sx={{ pb: 2, mt: 5, mb: 2 }}
                 onSubmit={formDetails}
             >
                 <Box sx={{}}>
                     <ButtonGroup
-                        sx={{ borderRadius: 5, justifyContent: 'center', m: 2 }}
+                    className='buttonGroup'
+                        sx={{ m: 2 }}
                     >
                         <Button
-                            sx={{ backgroundColor: '#f5f5f5', width: '10rem', border: 'none' }}
+                        className='btnBGColor btnWidth'
                         >
                             <Link to='' className='link'>Login</Link>
                         </Button>
                         <Button
                             variant='contained'
-                            sx={{ width: '10rem' }}
-                        >
+                            className='btnWidth'
+                            >
                             Register
                         </Button>
                     </ButtonGroup>
-                    <div className='name'>
+                    <div>
                         <TextField
                             required
                             disabled
@@ -86,7 +87,8 @@ export default function ParentRegister() {
                             placeholder="Parent Full Name"
                             name='ParentName'
                             value={ParentName}
-                            sx={{ width: '25rem', mt: 1.5 }}
+                            className='textFeildSize'
+                            sx={{ mt: 1.5 }}
                             onChange={formInputValidation} />
                     </div>
                     <div>
@@ -98,7 +100,8 @@ export default function ParentRegister() {
                             id="Parent-Email-ID"
                             name='PEmailID'
                             value={ParentEmailID}
-                            sx={{ width: '25rem', mt: 1.5 }}
+                            className='textFeildSize'
+                            sx={{ mt: 1.5 }}
                             onChange={formInputValidation} />
                     </div>
                     <div>
@@ -110,7 +113,8 @@ export default function ParentRegister() {
                             id="Parent-Contact-Number"
                             name='ParentContactNumber'
                             value={ParentContactNumber}
-                            sx={{ mt: 1.5, width: '25rem' }}
+                            className='textFeildSize'
+                            sx={{ mt: 1.5 }}
                             onChange={formInputValidation} />
                     </div>
                     <div>
@@ -121,14 +125,14 @@ export default function ParentRegister() {
                             id="Password"
                             name='ParentPassword'
                             value={ParentPassword}
-                            sx={{ mt: 1.5, width: '25rem' }}
+                            className='textFeildSize'
+                            sx={{ mt: 1.5 }}
                             onChange={formInputValidation} />
                         {(ParentPassword.length < 8 || ParentPassword.length > 15) && ParentPassword.length != 0 ? <p className='errorMsg'>Contains characters min 8  and max 14 </p> : null}
                         {!ParentPassword.match(ValidatePassword) && ParentPassword.length != 0 ? <p className='errorMsg'>Contains atleast one special character,one upper case, one lower case & one number</p> : null}
                     </div>
                     <div>
                         <TextField
-                            fullWidth
                             required
                             type={'text'}
                             placeholder="Confirm Password"
@@ -136,16 +140,17 @@ export default function ParentRegister() {
                             name='ParentConfirmPassword'
                             value={ParentConfirmPassword}
                             onChange={formInputValidation}
-                            sx={{ mt: 1.5, width: '25rem' }} />
+                            className='textFeildSize'
+                            sx={{ mt: 1.5 }} />
                         {ParentPassword != ParentConfirmPassword ? <p className='errorMsg' >Password is not matched</p> : null}
 
                     </div>
                     <div>
                         <Checkbox {...label} name='Checkbox' required sx={{ ml: -20 }} /> I accept TERMS & CONDITIONS
                     </div>
-                    <Button variant="contained" type={'submit'} sx={{ ml: '20rem', height: '3rem' }}>Register</Button>
-                    <div className=''>
-                        Already a User <Link to="">Sign IN</Link>
+                    <Button variant="contained" type={'submit'} className='btnSubmit' >Register</Button>
+                    <div className='bLink'>
+                        Already a User <Link to="" className='link'>Sign IN</Link>
                     </div>
                 </Box>
             </Box>

@@ -1,5 +1,38 @@
+.boxContainer {
+    width: 35rem;
+    margin: auto;
+    box-shadow: 0 0 15px #2270b44d;
+}
+
+.boxBody {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.buttonGroup {
+    justify-content: center;
+    border-radius: 5;
+    margin: 2pc;
+}
+
+.btnWidth {
+    width: 10rem;
+}
+
+.btnBGColor {
+    background-color: #f5f5f5;
+}
+
 .link {
     text-decoration: none;
+}
+
+.textFeildNameSize {
+    width: 12.2rem;
+}
+
+.textFeildSize {
+    width: 25rem;
 }
 
 .errorMsg {
@@ -13,4 +46,23 @@
     padding-left: 1rem;
     border: 0.1px solid #00000041;
     border-radius: 5px;
+}
+
+.mr40 {
+    margin-right: 40pc;
+}
+
+.ml_20 {
+    margin-left: -20pc;
+}
+
+.btnSubmit {
+    margin-left: 20rem;
+    height: 3rem;
+}
+
+.bLink {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
