@@ -6,7 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import './JobPostForm.css';
 import { Checkbox, Select, MenuItem, BadgeMark, TextFieldProps } from '@mui/material';
-import {Grid, Box } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -19,6 +19,15 @@ const JobPostForm = (props: any) => {
     var ValidateName = "^[A-Z a-z]+$";
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
 
+    const job = {
+        post: [
+            "Baby Sitter",
+            "Gardener",
+            "Pizza Delivery",
+            "Coffee Day",
+            "Type Writer"
+        ]
+    }
 
     const [check, setCheck] = React.useState(false);
     const [data, setData] = useState({
@@ -108,7 +117,6 @@ const JobPostForm = (props: any) => {
             <Grid container>
                 <Box className='boxContainer'>
                     <h1>JOB POSTING FORM</h1>
-
                     <form onSubmit={onVRFormSubmit} className="vrForm">
                         <div className="vrFormInput">
                             <TextField
@@ -137,22 +145,9 @@ const JobPostForm = (props: any) => {
                                     onChange={onJobPostInput}
                                     className="fifWidth"
                                 >
-                                    <MenuItem value="none">---None---</MenuItem>
-                                    <MenuItem value="Babysiter">Baby Sitter</MenuItem>
-                                    <MenuItem value="Gardener">Gardener</MenuItem>
-                                    <MenuItem value="Pizza delivery">Pizza Delivery</MenuItem>
-                                    <MenuItem value="Coffee day">Coffee Day Waiter</MenuItem>
-                                    <MenuItem value="Type writer">Type Writer</MenuItem>
-                                    <MenuItem value="Online tution">Online Tutions</MenuItem>
-                                    <MenuItem value="cook">Cook</MenuItem>
-                                    <MenuItem value="crew members">Crew members</MenuItem>
-                                    <MenuItem value="cashier">Cashier</MenuItem>
-                                    <MenuItem value="clerk helper">Clerk Helper</MenuItem>
-                                    <MenuItem value="sales crew">Sales crew</MenuItem>
-                                    <MenuItem value="Dish washer">Dish washer</MenuItem>
-                                    <MenuItem value="Beverage supplier">Beverage supplier</MenuItem>
-                                    <MenuItem value="pool cleaning">Pool cleaning</MenuItem>
-                                    <MenuItem value="none ">None of Above</MenuItem>
+                                    {job.post.map(data => (
+                                        <MenuItem>{data}</MenuItem>
+                                    ))}
                                 </Select>
                             </div>
                         </div>
@@ -177,7 +172,6 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="CashPayment"
                                     control={<Checkbox />}
-                                    // style={{ marginLeft: "3%" }}
                                     sx={{ ml: 3 }}
                                     name="CashPayment"
                                     value="CashPayment"
@@ -186,7 +180,6 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="NetBanking"
                                     control={<Checkbox />}
-                                    // style={{ marginLeft: "3%" }}
                                     sx={{ ml: 3 }}
                                     name="NetBanking"
                                     value="NetBanking"
@@ -195,7 +188,6 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="ChequePayment"
                                     control={<Checkbox />}
-                                    // style={{ marginLeft: "3%" }}
                                     sx={{ ml: 3 }}
                                     name="ChequePayment"
                                     value="ChequePayment"
@@ -204,7 +196,6 @@ const JobPostForm = (props: any) => {
                                 <FormControlLabel
                                     label="CashApp/ZelleApp/PayPal"
                                     control={<Checkbox />}
-                                    // style={{ marginLeft: "3%" }}
                                     sx={{ ml: 3 }}
                                     name="CashApp_ZelleApp_PayPal"
                                     value="CashApp/ZelleApp/PayPal"
