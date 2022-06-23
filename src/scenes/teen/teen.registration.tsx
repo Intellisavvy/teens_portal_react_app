@@ -43,11 +43,9 @@ export default function TeenRegistration() {
     const mnDate = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate())
     const mxDate = new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate())
 
-    // API Key
-    // const APIKey = "AIzaSyAmBHhXsFA7Zs12luX1Ve6QMgC5dpq1RVI";
     const APIKey = "AIzaSyCFtEPoeZg_ktUzAubSjwtHLCQCQA2LAdo";
 
-    const [searchBox, setSearchBox ] = useState('');
+    const [searchBox, setSearchBox] = useState('');
 
     const onAddress = (ref: any) => {
         setSearchBox(ref)
@@ -134,17 +132,17 @@ export default function TeenRegistration() {
                 component="form"
                 className='boxContainer'
             >
-                <Box 
-                className='boxBody'
-                mt={2} mb={5}
+                <Box
+                    className='boxBody'
+                    mt={2} mb={5}
                 >
                     <form onSubmit={formDetails}>
                         <ButtonGroup
-                        className='buttonGroup'                        
-                            // sx={{ justifyContent: 'center', m: 2 }}
+                            className='buttonGroup'
+                        sx={{ m: 2 }}
                         >
                             <Button
-                            className='btnWidth btnBGColor'
+                                className='btnWidth btnBGColor'
                             >
                                 <Link to='' className='link'>Login</Link>
                             </Button>
@@ -256,7 +254,7 @@ export default function TeenRegistration() {
                                     onChange={(newValue) => {
                                         setDOB(newValue);
                                     }}
-                                    renderInput={(params) => <TextField {...params} className='textFeildSize' sx={{ mt: 1.5}} />}                                />
+                                    renderInput={(params) => <TextField {...params} className='textFeildSize' sx={{ mt: 1.5 }} />} />
                             </LocalizationProvider>
                         </div>
                         <div>

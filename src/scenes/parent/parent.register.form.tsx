@@ -63,18 +63,18 @@ export default function ParentRegister() {
             >
                 <Box sx={{}}>
                     <ButtonGroup
-                    className='buttonGroup'
+                        className='buttonGroup'
                         sx={{ m: 2 }}
                     >
                         <Button
-                        className='btnBGColor btnWidth'
+                            className='btnBGColor btnWidth'
                         >
                             <Link to='' className='link'>Login</Link>
                         </Button>
                         <Button
                             variant='contained'
                             className='btnWidth'
-                            >
+                        >
                             Register
                         </Button>
                     </ButtonGroup>
