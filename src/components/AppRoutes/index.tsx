@@ -6,15 +6,15 @@ import { Dashboard } from "../../scenes/dashboard";
 import { Home } from "../../scenes/public/home";
 import { JobsList } from "../../scenes/jobs/jobs.list";
 import { JobPost } from "../../scenes/jobs/jobs.new";
-import { ParentRegister } from "../../scenes/parent/parent.register";
 import { Profile } from "../../scenes/common/profile/profile";
-import { TeenRegistration } from "../../scenes/teen/teen.registration";
 import { UserCard } from "../../scenes/users/UserCard";
 import { Users } from "../../scenes/users/Users";
 import { AppLayout } from "../Layouts/AppLayout";
 import { PublicLayout } from "../../scenes/public/public.layout";
 import { AppliedJobs } from "../../scenes/teen/appliedJobs/appliedJobs";
 import { JobSearch } from "../../scenes/teen/jobSearch/jobSearch";
+import ParentRegister from "../../scenes/parent/parent.register.form";
+import TeenRegistration from "../../scenes/teen/teen.registration";
 
 export const AppRoutes = () => {
     return useRoutes([
