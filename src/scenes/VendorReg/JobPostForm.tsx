@@ -19,15 +19,14 @@ const JobPostForm = (props: any) => {
     var ValidateName = "^[A-Z a-z]+$";
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
 
-    const job = {
-        post: [
+    const arr = [
             "Baby Sitter",
             "Gardener",
             "Pizza Delivery",
             "Coffee Day",
             "Type Writer"
         ]
-    }
+    
 
     const [check, setCheck] = React.useState(false);
     const [data, setData] = useState({
@@ -145,9 +144,9 @@ const JobPostForm = (props: any) => {
                                     onChange={onJobPostInput}
                                     className="fifWidth"
                                 >
-                                    {job.post.map(data => (
-                                        <MenuItem>{data}</MenuItem>
-                                    ))}
+                                    {arr.map(item => {
+                                        return  <MenuItem value={item}>{item}</MenuItem>
+                                    })}
                                 </Select>
                             </div>
                         </div>
