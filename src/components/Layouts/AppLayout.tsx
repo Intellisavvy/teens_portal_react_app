@@ -19,6 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Link, Outlet } from "react-router-dom"
+import ListSubheader from '@mui/material/ListSubheader';
 
 const drawerWidth = 240;
 
@@ -86,11 +87,22 @@ export const AppLayout = () => {
     const menu = [
         {
             displayName: 'Post a Job',
-            route: './jobpost'
+            route: '/vendor/jobpost'
         },
         {
             displayName: 'List Jobs',
-            route: './jobs'
+            route: '/vendor/jobs'
+        }
+    ]
+
+    const teenMenu = [
+        {
+            displayName: 'Search Jobs',
+            route: '/teen/search'
+        },
+        {
+            displayName: 'Applied jobs',
+            route: '/teen/jobs'
         }
     ]
 
@@ -132,14 +144,29 @@ export const AppLayout = () => {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List>
+                <List
+                    subheader={<ListSubheader>Vendor</ListSubheader>}>
                     {menu.map((item, index) => (
-                        <Link to={item.route} style={{textDecoration:'none', color:'gray'}}>
+                        <Link to={item.route} style={{ textDecoration: 'none', color: 'gray' }}>
                             <ListItem key={item.displayName} disablePadding>
                                 <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={item.displayName} />
 
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+                    ))}
+                </List>
 
-
+                <List
+                    subheader={<ListSubheader>Teenager</ListSubheader>}>
+                    {teenMenu.map((item, index) => (
+                        <Link to={item.route} style={{ textDecoration: 'none', color: 'gray' }}>
+                            <ListItem key={item.displayName} disablePadding>
+                                <ListItemButton>
                                     <ListItemIcon>
                                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                     </ListItemIcon>
@@ -151,17 +178,15 @@ export const AppLayout = () => {
                     ))}
                 </List>
                 <Divider />
-                
+
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Box
-                style={{height: '85vh'}}
-                >
+                <Box style={{ height: '85vh' }}>
 
-                <Outlet />
+                    <Outlet />
                 </Box>
-                
+
                 <div>footer</div>
             </Main>
         </Box>
