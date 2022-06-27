@@ -1,27 +1,18 @@
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { ButtonGroup, Checkbox, MenuItem, Typography } from '@mui/material';
+import { ButtonGroup, Checkbox } from '@mui/material';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../images_css/RegStyles.css';
+import { validatePwd } from '../../lib/utils';
 
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+
 export default function ParentRegister() {
 
-
-    var ValidatePassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
 
     const [data, setData] = useState({
         ParentName: '',
@@ -129,7 +120,7 @@ export default function ParentRegister() {
                             sx={{ mt: 1.5 }}
                             onChange={formInputValidation} />
                         {(ParentPassword.length < 8 || ParentPassword.length > 15) && ParentPassword.length != 0 ? <p className='errorMsg'>Contains characters min 8  and max 14 </p> : null}
-                        {!ParentPassword.match(ValidatePassword) && ParentPassword.length != 0 ? <p className='errorMsg'>Contains atleast one special character,one upper case, one lower case & one number</p> : null}
+                        {!validatePwd (ParentPassword) && ParentPassword.length != 0 ? <p className='errorMsg'>Contains atleast one special character,one upper case, one lower case & one number</p> : null}
                     </div>
                     <div>
                         <TextField

@@ -1,34 +1,31 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useRef } from 'react';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import './JobPostForm.css';
-import { Checkbox, Select, MenuItem, BadgeMark, TextFieldProps } from '@mui/material';
+import { Checkbox, Select, MenuItem, TextFieldProps } from '@mui/material';
 import { Grid, Box } from '@mui/material';
 import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { validateName } from '../../lib/utils';
 
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const JobPostForm = (props: any) => {
 
-    var ValidateName = "^[A-Z a-z]+$";
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
 
     const arr = [
-            "Baby Sitter",
-            "Gardener",
-            "Pizza Delivery",
-            "Coffee Day",
-            "Type Writer"
-        ]
-    
+        "Baby Sitter",
+        "Gardener",
+        "Pizza Delivery",
+        "Coffee Day",
+        "Type Writer"
+    ]
 
-    const [check, setCheck] = React.useState(false);
+
     const [data, setData] = useState({
         VenueName: '',
         TypeOfPostAppliedFor: '',
@@ -48,8 +45,7 @@ const JobPostForm = (props: any) => {
     })
 
 
-    const [loadingValue, setLoadingValue] = useState('');
-    const checkBoxRef = useRef('');
+    const [ , setLoadingValue] = useState('');
     const {
         VenueName,
         TypeOfPostAppliedFor,
@@ -66,7 +62,7 @@ const JobPostForm = (props: any) => {
         ZipCode,
         ContactingDetails
     } = data;
-    const [checkBox, setCheckBox] = useState(false);
+
     const onJobPostInput = (e: any) => {
         setData({ ...data, [e.target.name]: e.target.value });
         const LoadValue = e.target.value;
@@ -127,13 +123,13 @@ const JobPostForm = (props: any) => {
                                 onChange={onJobPostInput}
                                 className="fifWidth"
                             />
-                            {(VenueName.length < 0 || !VenueName.match(ValidateName)) ?
+                            {(VenueName.length < 0 || !validateName (VenueName)) ?
                                 <pre className='errorMsg'>The name should start with UpperCase and follow with LowerCase</pre> : null}
 
                         </div>
                         <div className="vrFormInput">
                             <div >
-                                <label className='ml_25'><b>JOB Title</b></label>
+                                <label className='mr26' ><b>JOB Title</b></label>
                             </div>
                             <div >
                                 <Select
@@ -145,7 +141,7 @@ const JobPostForm = (props: any) => {
                                     className="fifWidth"
                                 >
                                     {arr.map(item => {
-                                        return  <MenuItem value={item}>{item}</MenuItem>
+                                        return <MenuItem value={item}>{item}</MenuItem>
                                     })}
                                 </Select>
                             </div>
@@ -153,7 +149,7 @@ const JobPostForm = (props: any) => {
 
                         <div >
                             <div>
-                                <label className='ml_25'><b>Job Description</b></label>
+                                <label className='mr23' ><b>Job Description</b></label>
                             </div>
                             <div>
                                 <textarea
@@ -204,9 +200,9 @@ const JobPostForm = (props: any) => {
                         </div>
                         <div >
                             <div>
-                                <label className='ml_25'><b>Total Time Period</b></label>
+                                <label className='mr23' ><b>Total Time Period</b></label>
                             </div>
-                            <div className='ml5 d_flex'>
+                            <div className=' d_flex'>
                                 <div >
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DateRangePicker
@@ -230,7 +226,7 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div >
                                 <div>
-                                    <label className='ml_25'><b>Work Timings</b></label>
+                                    <label className='mr23 ml_1-5' ><b>Work Timings</b></label>
                                 </div>
                                 <TextField
                                     value={WorkingTime}
@@ -241,9 +237,9 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div >
                                 <div>
-                                    <label className='ml_25'><b>Job Location</b></label>
+                                    <label className='mr23 ml_1-5'><b>Job Location</b></label>
                                 </div>
-                                <div className='ml5 d_flex'>
+                                <div className=' d_flex'>
                                     <div >
                                         <TextField
                                             value={LocatedState}
@@ -277,18 +273,18 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div className='fifWidth'>
                                 <div>
-                                    <label className='ml_15'><b>Contact Details</b></label><br />
+                                    <label className='mr23 ml_1' ><b>Contact Details</b></label><br />
                                 </div>
                                 <div>
                                     <textarea
                                         value={ContactingDetails}
                                         name="ContactingDetails"
-                                        className='fifWidth ml5'
+                                        className='fifWidth '
                                         onChange={onJobPostInput}
                                     />
                                 </div>
                             </div>
-                            <div className='ml_15'>
+                            <div className='termsConditions'>
                                 <input type={'checkbox'} /> I accept TERMS & CONDITIONS
 
                             </div>
@@ -297,7 +293,7 @@ const JobPostForm = (props: any) => {
                                     variant="contained"
                                     type={'submit'}
                                 >
-                                    Post Job
+                                    Post Jobs
                                 </Button>
                             </div>
                         </div>

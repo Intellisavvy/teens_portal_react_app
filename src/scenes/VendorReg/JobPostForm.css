@@ -1,82 +1,55 @@
-.nav {
-  margin-left: 3rem;
-}
-
 .button {
-  margin-left: 30rem;
+  margin-left: 24rem;
   margin-right: 3rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-
 .fiAlignment {
-  margin-left: 5rem;
+  margin-left: 2.7rem;
   text-align: left;
 }
 .vrFormInput {
   margin-top: 1rem;
 }
-
 .boxContainer {
   box-shadow: 0 0 10px #2270b44d;
   margin: auto;
   font-weight: 700;
   border-radius: 5px;
   font-size: 0.875rem;
+  margin-bottom: 2rem;
 }
-
 .ltfWidth {
   width: 9rem;
   margin-right: .5rem;
 }
-.drFeild {
-  margin-right: 0.5rem;
-  width: 14rem;
-}
-.size {
-  width: 29.5rem;
-  height: 3rem;
-}
-
 .fifWidth {
   width: 30rem;
+  margin: auto;
 }
-
-.slow {
-  margin-left: 2rem;
-}
-
-.long {
-  display: flex;
-}
-
-.flow {
-  width: 9rem;
-}
-
 .flip {
   margin-left: 1.5rem;
-}
-
-.txt {
-  margin-top: 1rem;
-}
-
-.vern {
-  margin-top: 2rem;
 }
 .errorMsg {
   color: red
 }
-
-.ml5 {
-  margin-left: 5rem;
+.ml_1 {
+  margin-left: -1rem;
 }
-.ml_15 {
-  margin-left: -15rem;
+.mr26 {
+  margin-right: 26rem;
 }
-.ml_25 {
-  margin-left: -25rem;
+.mr23 {
+  margin-right: 23rem;
 }
 .d_flex {
   display: flex;
+  margin-left: 2rem;
+}
+.termsConditions {
+  margin-right: 16rem;
+  margin-top: 2rem;
+}
+.ml_1-5 {
+  margin-left: -1.5rem 
 }

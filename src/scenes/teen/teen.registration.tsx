@@ -1,5 +1,4 @@
 
-import { styled } from '@mui/material/styles';
 import {
     Box,
     Button,
@@ -8,7 +7,6 @@ import {
     FormControl,
     FormControlLabel,
     FormLabel,
-    Paper,
     Radio,
     RadioGroup,
     TextField,
@@ -21,23 +19,13 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ReactInputMask from 'react-input-mask';
 import { LoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 import '../../images_css/RegStyles.css';
+import { validateEmail, validateName, validatePwd } from '../../lib/utils';
 
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 export default function TeenRegistration() {
 
-
-    var ValidateName = "^[A-Z a-z]+$";
-    var ValidateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    var ValidatePassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
 
     const [dob, setDOB] = React.useState<Date | null>(null);
     const mnDate = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate())
@@ -45,7 +33,7 @@ export default function TeenRegistration() {
 
     const APIKey = "AIzaSyCFtEPoeZg_ktUzAubSjwtHLCQCQA2LAdo";
 
-    const [searchBox, setSearchBox] = useState('');
+    const [, setSearchBox] = useState('');
 
     const onAddress = (ref: any) => {
         setSearchBox(ref)
@@ -82,20 +70,11 @@ export default function TeenRegistration() {
         ContactNumber,
         Password,
         ConfirmPassword,
-        DOB,
         SSN,
-        Gender,
-        ProfilePhoto,
-        Resume,
         PGName,
         PGNumber,
         PGEmailID,
-        Address,
-        City,
-        State,
-        ZIPCode,
-        Location
-    } = data;
+        Address } = data;
     const formInputValidation = (e: any) => {
         setData({ ...data, [e.target.name]: e.target.value });
     }
@@ -139,7 +118,7 @@ export default function TeenRegistration() {
                     <form onSubmit={formDetails}>
                         <ButtonGroup
                             className='buttonGroup'
-                        sx={{ m: 2 }}
+                            sx={{ m: 2 }}
                         >
                             <Button
                                 className='btnWidth btnBGColor'
@@ -179,12 +158,11 @@ export default function TeenRegistration() {
                                 onChange={formInputValidation}
                             />
                         </div>
-                        {(FirstName.length == 0 || !FirstName.match(ValidateName)) || (LastName.length == 0 || !LastName.match(ValidateName)) ?
+                        {(FirstName.length == 0 || !validateName(FirstName)) || (LastName.length == 0 || !validateName(LastName)) ?
                             <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null}
-
-                        {!FirstName.match(ValidateName) && FirstName.length != 0 ? <span className='errorMsg'>Enter valid First name, Allow characters only<br /></span> : null}
-                        {!LastName.match(ValidateName) && LastName.length != 0 ? <span className='errorMsg'>Enter valid Last name, Allow characters only<br /> </span> : null}
-                        {(FirstName.length < 2 || LastName.length < 2) && (FirstName.length != 0 || LastName.length != 0) ? <span className='errorMsg'>Name should contain minimum 2 characters</span> : null}
+                        {!validateName(FirstName) && FirstName.length != 0 ? <span className='errorMsg'>Enter valid First name, Allow characters only<br /></span> : null}
+                        {!validateName(LastName) && LastName.length != 0 ? <span className='errorMsg'>Enter valid Last name, Allow characters only<br /> </span> : null}
+                        {(FirstName.length < 2 || LastName.length < 2) && (FirstName.length != 0 || LastName.length != 0) ? <span className='errorMsg'>Both Names should contain minimum 2 characters</span> : null}
                         <div>
                             <TextField
                                 required
@@ -198,7 +176,7 @@ export default function TeenRegistration() {
                                 sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
-                            {!EmailID.match(ValidateEmail) && EmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
+                            {!validateEmail(EmailID) && EmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
                         </div>
                         <div>
                             <ReactInputMask
@@ -227,7 +205,7 @@ export default function TeenRegistration() {
                                 onChange={formInputValidation}
                             />
                             {(Password.length < 8 || Password.length > 15) && Password.length != 0 ? <p className='errorMsg'>Contains characters min 8  and max 14 </p> : null}
-                            {!Password.match(ValidatePassword) && Password.length != 0 ? <p className='errorMsg'>Contains one special character,one upper case, one lower case and one number</p> : null}
+                            {!validatePwd(Password) && Password.length != 0 ? <p className='errorMsg'>Contains one special character,one upper case, one lower case and one number</p> : null}
                         </div>
                         <div>
                             <TextField
@@ -297,9 +275,9 @@ export default function TeenRegistration() {
                                 sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
-                            {PGName.length == 0 || !PGName.match(ValidateName) ?
+                            {PGName.length == 0 || !validateName(PGName) ?
                                 <pre className='PreText'>The name should start with UpperCase and follow with LowerCase</pre> : null}
-                            {!PGName.match(ValidateName) && PGName.length != 0 ? <p className='errorMsg'>Enter valid Parent/Guardian Name </p> : null}
+                            {!validateName(PGName) && PGName.length != 0 ? <p className='errorMsg'>Enter valid Parent/Guardian Name </p> : null}
                         </div>
                         <div>
                             <ReactInputMask
@@ -312,7 +290,7 @@ export default function TeenRegistration() {
                                 value={PGNumber}
                                 className="reactInputMask"
                                 onChange={formInputValidation}
-                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField label='cc number' {...props} />}
+                                {...(props: JSX.IntrinsicAttributes & TextFieldProps) => <TextField {...props} />}
                             />
                         </div>
 
@@ -329,7 +307,7 @@ export default function TeenRegistration() {
                                 sx={{ mt: 1.5 }}
                                 onChange={formInputValidation}
                             />
-                            {!PGEmailID.match(ValidateEmail) && PGEmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
+                            {!validateEmail (PGEmailID) && PGEmailID.length != 0 ? <p className='errorMsg'>Enter valid Email ID </p> : null}
                         </div>
                         <div>
                             <TextField
