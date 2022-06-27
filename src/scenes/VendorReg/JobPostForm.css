@@ -1,0 +1,55 @@
+.button {
+  margin-left: 24rem;
+  margin-right: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.fiAlignment {
+  margin-left: 2.7rem;
+  text-align: left;
+}
+.vrFormInput {
+  margin-top: 1rem;
+}
+.boxContainer {
+  box-shadow: 0 0 10px #2270b44d;
+  margin: auto;
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+.ltfWidth {
+  width: 9rem;
+  margin-right: .5rem;
+}
+.fifWidth {
+  width: 30rem;
+  margin: auto;
+}
+.flip {
+  margin-left: 1.5rem;
+}
+.errorMsg {
+  color: red
+}
+.ml_1 {
+  margin-left: -1rem;
+}
+.mr26 {
+  margin-right: 26rem;
+}
+.mr23 {
+  margin-right: 23rem;
+}
+.d_flex {
+  display: flex;
+  margin-left: 2rem;
+}
+.termsConditions {
+  margin-right: 16rem;
+  margin-top: 2rem;
+}
+.ml_1-5 {
+  margin-left: -1.5rem 
+}
