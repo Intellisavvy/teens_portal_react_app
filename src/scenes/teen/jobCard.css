@@ -1,0 +1,16 @@
+.jobCardContainer {
+    margin: auto;
+    border: 3px solid #000000;
+    padding-top: 1rem;
+}
+.jobCardRow {
+    display: flex;
+}
+.jobCardDataTitel {
+    margin-left: 1rem;
+    
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0,0.54);
+    font-weight: 600;
+    line-height: 29.05px; 
+}
