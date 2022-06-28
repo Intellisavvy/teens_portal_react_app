@@ -1,17 +1,15 @@
-.nav {
-  margin-left: 3rem;
-}
 
 .button {
-  margin-left: 30rem;
+  margin-left: 23rem;
   margin-right: 3rem;
-  margin-bottom: 2rem;
+
 }
 
 .fiAlignment {
-  margin-left: 5rem;
+  margin-left: 2.7rem;
   text-align: left;
 }
+
 .vrFormInput {
   margin-top: 1rem;
 }
@@ -28,55 +26,51 @@
   width: 9rem;
   margin-right: .5rem;
 }
-.drFeild {
-  margin-right: 0.5rem;
-  width: 14rem;
-}
-.size {
-  width: 29.5rem;
-  height: 3rem;
-}
 
 .fifWidth {
   width: 30rem;
-}
-
-.slow {
-  margin-left: 2rem;
-}
-
-.long {
-  display: flex;
-}
-
-.flow {
-  width: 9rem;
 }
 
 .flip {
   margin-left: 1.5rem;
 }
 
-.txt {
-  margin-top: 1rem;
-}
-
-.vern {
-  margin-top: 2rem;
-}
 .errorMsg {
   color: red
 }
 
-.ml5 {
-  margin-left: 5rem;
+.d_flex {
+  display: flex;
 }
+
+.ml5 {
+  margin-left: 2.5rem;
+}
+
 .ml_15 {
   margin-left: -15rem;
 }
-.ml_25 {
-  margin-left: -25rem;
+
+.mr26 {
+  margin-right: 26rem;
 }
-.d_flex {
-  display: flex;
+
+.mr24 {
+  margin-right: 24rem;
+}
+
+.mr23-5 {
+  margin-right: 23.5rem;
+}
+
+.mr23 {
+  margin-right: 23rem;
+}
+
+.mr22 {
+  margin-right: 22rem;
+}
+
+.mr18-3 {
+  margin-right: 18.3rem;
 }
