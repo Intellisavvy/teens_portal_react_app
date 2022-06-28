@@ -1,0 +1,48 @@
+.jobCardContainer {
+   padding-top: 1rem;
+   margin-top: 2rem;
+   border: 3px solid #000000;
+   margin-bottom: 3rem;
+}
+
+.jobCardRow {
+   display: flex;
+}
+
+.jobCardTextTitleFont {
+   color: rgb(0, 0, 0, 0.54);
+   font-size: 1.2rem;
+   font-weight: 600;
+}
+
+.jobCardDataTitle {
+   margin-left: 1rem;
+   line-height: 29.05px;
+   width: 28%;
+   text-align: left;
+}
+
+.jobCardDataBody {
+   margin-left: 1rem;
+   font-size: 1.1rem;
+   color: rgba(0, 0, 0);
+   font-weight: 550;
+   width: 70%;
+   line-height: 29.05px;
+   text-align: left;
+}
+.button
+{
+   width: 9rem;
+   margin-top: 1rem;
+   margin-left: 42rem;
+}
+
+
+
+
+
+
+
+
+
