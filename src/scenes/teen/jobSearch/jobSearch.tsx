@@ -59,7 +59,7 @@ export const JobSearch = () => {
                         <div className='jobCardRow jobCardTextTitleFont' >
                            <div className='jobCardDataTitle'>JobLocation </div> :<div className='jobCardDataBody'>{hy.joblocation}</div>
                         </div>
-                        <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardRow jobCardTxtTitleFont' >
                            <div className='jobCardDataTitle'>Contact Details </div >: <div className='jobCardDataBody'>{hy.contactdetails}</div>
                         </div>
                         <div className='button'>
