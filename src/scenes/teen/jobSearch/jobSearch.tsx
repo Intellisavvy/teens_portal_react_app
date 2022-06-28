@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Jobsearch from './joblist.json'
 import { Box } from '@mui/system';
@@ -39,7 +39,7 @@ export const JobSearch = () => {
                   <div key={hy.id}>
                      <Box className="jobCardContainer">
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>Name/Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div> <br />
+                           <div className='jobCardDataTitle'>Name/Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
                            <div className='jobCardDataTitle'>JobTitle</div>:<div className='jobCardDataBody'>{hy.jobtitle}</div>
@@ -64,7 +64,7 @@ export const JobSearch = () => {
                         </div>
                         <div className='button'>
                            <Stack  >
-                              <Button variant="contained" >Apply</Button>
+                              <Button variant="contained">Apply</Button>
                            </Stack>
                         </div>
                      </Box>
