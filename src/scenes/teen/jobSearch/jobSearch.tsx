@@ -37,7 +37,6 @@ export const JobSearch = () => {
             Jobsearch.filter(hy => hy.jobtitle.toLowerCase().includes(search.toLowerCase())).map(hy => {
                return (
                   <div key={hy.id}>
-
                      <Box className="jobCardContainer">
                         <div className='jobCardRow jobCardTextTitleFont' >
                            <div className='jobCardDataTitle'>Name/Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div> <br />
