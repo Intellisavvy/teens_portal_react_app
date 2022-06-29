@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from '@mui/material';
 
+
 export const JobSearch = () => {
    const [name, setname] = useState({
       search: ''
@@ -39,28 +40,28 @@ export const JobSearch = () => {
                   <div key={hy.id}>
                      <Box className="jobCardContainer">
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>Name/Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div>
+                           <div className='jobCardDataTitle'>Name / Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>JobTitle</div>:<div className='jobCardDataBody'>{hy.jobtitle}</div>
+                           <div className='jobCardDataTitle'>Job Title</div>:<div className='jobCardDataBody'>{hy.jobtitle}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>JobDescription</div>:<div className='jobCardDataBody'> {hy.jobdescription}</div>
+                           <div className='jobCardDataTitle'>Job Description</div>:<div className='jobCardDataBody'> {hy.jobdescription}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
                            <div className='jobCardDataTitle'> Payment</div>:<div className='jobCardDataBody'> {hy.payment}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>TimePeriod </div> : <div className='jobCardDataBody'>From:{hy.fromdate}  To:{hy.todate}</div>
+                           <div className='jobCardDataTitle'>Time Period </div> : <div className='jobCardDataBody'>From:{hy.fromdate}  To:{hy.todate}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>WorkingTime </div>:<div className='jobCardDataBody'> {hy.workingtime}</div>
+                           <div className='jobCardDataTitle'>Working Time </div>:<div className='jobCardDataBody'> {hy.workingtime}</div>
                         </div>
                         <div className='jobCardRow jobCardTextTitleFont' >
-                           <div className='jobCardDataTitle'>JobLocation </div> :<div className='jobCardDataBody'>{hy.joblocation}</div>
+                           <div className='jobCardDataTitle'>Job Location </div> :<div className='jobCardDataBody'>{hy.joblocation}</div>
                         </div>
-                        <div className='jobCardRow jobCardTxtTitleFont' >
-                           <div className='jobCardDataTitle'>Contact Details </div >: <div className='jobCardDataBody'>{hy.contactdetails}</div>
+                        <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>Contact Details </div >: <div className='jobCardDataBody'>{hy.contactdetails}</div>
                         </div>
                         <div className='button'>
                            <Stack  >
