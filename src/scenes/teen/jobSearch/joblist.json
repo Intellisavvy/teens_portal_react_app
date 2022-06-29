@@ -142,5 +142,17 @@
         "workingtime": "9am to 8pm",
         "joblocation": "Texas,Sanantanio,Houston street,Shopno:186,Zipcode:28404",
         "contactdetails": "Ph:7782729012 ,Email:Adidas@gmail.com"
+    },
+    {
+        "id": 13,
+        "OrgName": "Adidas Showroom",
+        "jobtitle": "Sales Boy",
+        "jobdescription": "The salesperson is responsible for greeting customers, helping them find items in the store, and ringing up purchases. To be successful as a salesperson you must have excellent communication skills. A good salesperson meets sales objectives while remaining polite and helpful to customers.",
+        "payment": "Cash Payment",
+        "fromdate": "08/01/2022",
+        "todate": "02/01/2023",
+        "workingtime": "9am to 8pm",
+        "joblocation": "Texas,hollyland,steet19,Zip:23871",
+        "contactdetails": "Ph:7782213443 ,Email:Adidas_01@gmail.com"
     }
 ]
