@@ -1,12 +1,13 @@
+
 import * as React from 'react';
 import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import './JobPostForm.css';
-import { Checkbox, Select, MenuItem, TextFieldProps } from '@mui/material';
+import { Checkbox, Select, MenuItem, TextFieldProps, Stack } from '@mui/material';
 import { Grid, Box } from '@mui/material';
-import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro';
+import { DateRangePicker, DateRange, MobileTimePicker } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { validateName } from '../../lib/utils';
@@ -16,26 +17,33 @@ import { validateName } from '../../lib/utils';
 const JobPostForm = (props: any) => {
 
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
+    const [value, setValue] = React.useState<Date | null>(
+        new Date('2000-01-01 12:00'),
+    );
+    const [values, setValues] = React.useState<Date | null>(
+        new Date('2020-01-01 12:00'),
+    );
+
 
     const arr = [
-            "Baby Sitter",
-            "Gardener",
-            "Pizza Delivery",
-            "Coffee Day",
-            "Type Writer",
-            "Online Tutions",
-            'Pool Cleaning',
-            "Beverage Supplier",
-            "Dish Washer",
-            "Sales Crew",
-            "Clerk Helper",
-            "Casher",
-            "Crew Members",
-            "Cook / Cheif",
-            "Paper Supplier",
-            "Grocery Supplier"
-        ]
-    
+        "Baby Sitter",
+        "Gardener",
+        "Pizza Delivery",
+        "Coffee Day",
+        "Type Writer",
+        "Online Tutions",
+        'Pool Cleaning',
+        "Beverage Supplier",
+        "Dish Washer",
+        "Sales Crew",
+        "Clerk Helper",
+        "Casher",
+        "Crew Members",
+        "Cook / Cheif",
+        "Paper Supplier",
+        "Grocery Supplier"
+    ]
+
 
     const [data, setData] = useState({
         VenueName: '',
@@ -151,7 +159,7 @@ const JobPostForm = (props: any) => {
                                     className="fifWidth"
                                 >
                                     {arr.map(item => {
-                                        return  <MenuItem value={item}>{item}</MenuItem>
+                                        return <MenuItem value={item}>{item}</MenuItem>
                                     })}
                                 </Select>
                             </div>
@@ -171,7 +179,7 @@ const JobPostForm = (props: any) => {
                                 />
                             </div>
                         </div>
-                        
+
                         <div className='fiAlignment'>
                             <label><b>Payment</b></label>
                             <div>
@@ -216,7 +224,7 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div className='ml5 d_flex'>
                                 <div >
-                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DateRangePicker
                                             startText=""
                                             endText=""
@@ -233,19 +241,36 @@ const JobPostForm = (props: any) => {
                                             )}
                                         />
                                     </LocalizationProvider>
-
                                 </div>
                             </div>
                             <div >
                                 <div>
                                     <label className='mr23-5'><b>Work Timings</b></label>
                                 </div>
-                                <TextField
-                                    value={WorkingTime}
-                                    name="WorkingTime"
-                                    onChange={onJobPostInput}
-                                    className="fifWidth"
-                                />
+                                <div className='ml5 d_flex'>
+                                    <div>
+
+                                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                            <Stack spacing={3} direction={'row'}>
+                                                <MobileTimePicker
+                                                    value={value}
+                                                    onChange={(newValue) => {
+                                                        setValue(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                <MobileTimePicker
+                                                    value={values}
+                                                    onChange={(newValue) => {
+                                                        setValues(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+
+                                            </Stack>
+                                        </LocalizationProvider>
+                                    </div>
+                                </div>
                             </div>
                             <div >
                                 <div>
