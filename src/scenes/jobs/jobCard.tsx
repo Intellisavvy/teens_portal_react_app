@@ -10,38 +10,36 @@ export const JobCard = () => {
          Data.map(hy => {
             return (
                <div key={hy.id}>
-                  <Box className="well">
-
-                     <div >
-                        <td className='size'>  Name/Organization:</td> <td className='name'> {hy.OrgName}</td>
+                  <Box className="jobCardContainer">
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>Name/Organization</div>:<div className='jobCardDataBody'> {hy.OrgName}</div> <br />
                      </div>
-                     <div>
-                        <td className='size'>JobTitle:</td><td className='title'>{hy.jobtitle}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>JobTitle</div>:<div className='jobCardDataBody'>{hy.jobtitle}</div>
                      </div>
-                     <div>
-                        <td className='size'>JobDescription:</td> <td className='jd'> {hy.jobdescription}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>JobDescription</div>:<div className='jobCardDataBody'> {hy.jobdescription}</div>
                      </div>
-                     <div >
-                        <td className='size'> Payment:</td>  <td className='payment'> {hy.payment}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'> Payment</div>:<div className='jobCardDataBody'> {hy.payment}</div>
                      </div>
-                     <div>
-                        <td className='size'>TimePeriod: </td>  <td className='date'>From:{hy.fromdate}  To:{hy.todate}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>TimePeriod </div> : <div className='jobCardDataBody'>From:{hy.fromdate}  To:{hy.todate}</div>
                      </div>
-                     <div>
-                        <td className='size'>WorkingTime: </td><td className='time'> {hy.workingtime}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>WorkingTime </div>:<div className='jobCardDataBody'> {hy.workingtime}</div>
                      </div>
-                     <div>
-                        <td className='size'>JobLocation: </td> <td className='location'>{hy.joblocation}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>JobLocation </div> :<div className='jobCardDataBody'>{hy.joblocation}</div>
                      </div>
-                     <div>
-                        <td className='size'>ContactDetails: </td > <td className='contact'>{hy.contactdetails}</td>
+                     <div className='jobCardRow jobCardTextTitleFont' >
+                        <div className='jobCardDataTitle'>Contact Details </div >: <div className='jobCardDataBody'>{hy.contactdetails}</div>
                      </div>
-                     <div>
-                        <Stack spacing={2} sx={{ marginLeft: '46rem', width: "9rem", marginBottom: '2rem' }}>
+                     <div className='button'>
+                        <Stack  >
                            <Button variant="contained" >Apply</Button>
                         </Stack>
                      </div>
-
                   </Box>
                </div>
             )

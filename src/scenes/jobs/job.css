@@ -1,56 +1,47 @@
-.well {
-   border: 3px solid black;
-   border-radius: 10px;
-   font-size: 0.875rem;
-   font-weight: 700;
-   width: 60rem;
-   margin-left: 7rem;
-   margin-top: 5rem;
+.jobCardContainer {
+  padding-top: 1rem;
+  margin-top: 2rem;
+  border: 3px solid #000000;
+ margin-bottom: 3rem;
 }
 
-.size {
-   font-size: 1.3rem;
-   color: rgba(0, 0, 0, 0.614);
+.jobCardRow {
+  display: flex;
 }
 
-.name {
-   font-size: 1.3rem;
-   padding-left: 1.4rem;
+.jobCardTextTitleFont {
+  color: rgb(0, 0, 0, 0.54);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.title {
-   font-size: 1.3rem;
-   padding-left: 8.4rem;
+.jobCardDataTitle {
+  margin-left: 1rem;
+  line-height: 29.05px;
+  width: 28%;
+  text-align: left;
 }
 
-.jd {
-   font-size: 1.3rem;
-   padding-left: 3.8rem;
-   text-align: justify;
-   padding-right: 1rem;
+.jobCardDataBody {
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0);
+  font-weight: 550;
+  width: 70%;
+  line-height: 29.05px;
+  text-align: left;
+}
+.button
+{
+  width: 9rem;
+  margin-top: 1rem;
+  margin-left: 42rem;
 }
 
-.payment {
-   font-size: 1.3rem;
-   padding-left: 7.8rem;
-}
 
-.date {
-   font-size: 1.3rem;
-   padding-left: 6.2rem;
-}
 
-.time {
-   font-size: 1.3rem;
-   padding-left: 5rem;
-}
 
-.location {
-   font-size: 1.3rem;
-   padding-left: 5.5rem;
-}
 
-.contact {
-   font-size: 1.3rem;
-   padding-left: 4.2rem;
-}
+
+
+
