@@ -1,22 +1,20 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useRef } from 'react';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import './JobPostForm.css';
-import { Checkbox, Select, MenuItem, BadgeMark, TextFieldProps } from '@mui/material';
+import { Checkbox, Select, MenuItem, TextFieldProps } from '@mui/material';
 import { Grid, Box } from '@mui/material';
 import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { validateName } from '../../lib/utils';
 
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const JobPostForm = (props: any) => {
 
-    var ValidateName = "^[A-Z a-z]+$";
     const [DateLimit, setDateLimit] = React.useState<DateRange<Date>>([null, null]);
 
     const arr = [
@@ -24,11 +22,21 @@ const JobPostForm = (props: any) => {
             "Gardener",
             "Pizza Delivery",
             "Coffee Day",
-            "Type Writer"
+            "Type Writer",
+            "Online Tutions",
+            'Pool Cleaning',
+            "Beverage Supplier",
+            "Dish Washer",
+            "Sales Crew",
+            "Clerk Helper",
+            "Casher",
+            "Crew Members",
+            "Cook / Cheif",
+            "Paper Supplier",
+            "Grocery Supplier"
         ]
     
 
-    const [check, setCheck] = React.useState(false);
     const [data, setData] = useState({
         VenueName: '',
         TypeOfPostAppliedFor: '',
@@ -48,8 +56,7 @@ const JobPostForm = (props: any) => {
     })
 
 
-    const [loadingValue, setLoadingValue] = useState('');
-    const checkBoxRef = useRef('');
+    const [, setLoadingValue] = useState('');
     const {
         VenueName,
         TypeOfPostAppliedFor,
@@ -66,7 +73,6 @@ const JobPostForm = (props: any) => {
         ZipCode,
         ContactingDetails
     } = data;
-    const [checkBox, setCheckBox] = useState(false);
     const onJobPostInput = (e: any) => {
         setData({ ...data, [e.target.name]: e.target.value });
         const LoadValue = e.target.value;
@@ -127,13 +133,13 @@ const JobPostForm = (props: any) => {
                                 onChange={onJobPostInput}
                                 className="fifWidth"
                             />
-                            {(VenueName.length < 0 || !VenueName.match(ValidateName)) ?
+                            {(VenueName.length < 0 || !validateName(VenueName)) ?
                                 <pre className='errorMsg'>The name should start with UpperCase and follow with LowerCase</pre> : null}
-
                         </div>
+
                         <div className="vrFormInput">
                             <div >
-                                <label className='ml_25'><b>JOB Title</b></label>
+                                <label className='mr26'><b>JOB Title</b></label>
                             </div>
                             <div >
                                 <Select
@@ -151,9 +157,9 @@ const JobPostForm = (props: any) => {
                             </div>
                         </div>
 
-                        <div >
+                        <div className="vrFormInput">
                             <div>
-                                <label className='ml_25'><b>Job Description</b></label>
+                                <label className='mr23'><b>Job Description</b></label>
                             </div>
                             <div>
                                 <textarea
@@ -165,6 +171,7 @@ const JobPostForm = (props: any) => {
                                 />
                             </div>
                         </div>
+                        
                         <div className='fiAlignment'>
                             <label><b>Payment</b></label>
                             <div>
@@ -202,9 +209,10 @@ const JobPostForm = (props: any) => {
                                 /><br />
                             </div>
                         </div>
-                        <div >
+
+                        <div>
                             <div>
-                                <label className='ml_25'><b>Total Time Period</b></label>
+                                <label className='mr22'><b>Total Time Period</b></label>
                             </div>
                             <div className='ml5 d_flex'>
                                 <div >
@@ -219,7 +227,7 @@ const JobPostForm = (props: any) => {
                                             renderInput={(startProps: JSX.IntrinsicAttributes & TextFieldProps, endProps: JSX.IntrinsicAttributes & TextFieldProps) => (
                                                 <React.Fragment>
                                                     <TextField {...startProps} />
-                                                    <Box sx={{ mx: 2 }}> to </Box>
+                                                    <Box sx={{ mx: 1 }}> to </Box>
                                                     <TextField {...endProps} />
                                                 </React.Fragment>
                                             )}
@@ -230,7 +238,7 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div >
                                 <div>
-                                    <label className='ml_25'><b>Work Timings</b></label>
+                                    <label className='mr23-5'><b>Work Timings</b></label>
                                 </div>
                                 <TextField
                                     value={WorkingTime}
@@ -241,7 +249,7 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div >
                                 <div>
-                                    <label className='ml_25'><b>Job Location</b></label>
+                                    <label className='mr24'><b>Job Location</b></label>
                                 </div>
                                 <div className='ml5 d_flex'>
                                     <div >
@@ -250,8 +258,8 @@ const JobPostForm = (props: any) => {
                                             name="LocatedState"
                                             onChange={onJobPostInput}
                                             className='ltfWidth'
-                                            placeholder='State' />
-
+                                            placeholder='State'
+                                        />
                                     </div>
                                     <div className='flip'>
                                         <TextField
@@ -277,7 +285,7 @@ const JobPostForm = (props: any) => {
                             </div>
                             <div className='fifWidth'>
                                 <div>
-                                    <label className='ml_15'><b>Contact Details</b></label><br />
+                                    <label className='mr18-3'><b>Contact Details</b></label><br />
                                 </div>
                                 <div>
                                     <textarea
