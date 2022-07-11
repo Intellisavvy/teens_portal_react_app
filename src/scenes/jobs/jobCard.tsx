@@ -154,11 +154,16 @@ export const JobCard = () => {
                      <div
                         className='jobCardButton'
                      >
-                        <Stack  >
+                        <Stack spacing={5} direction= 'row'>
+                        <Button
+                              variant="contained"
+                           >
+                              Reject
+                           </Button>
                            <Button
                               variant="contained"
                            >
-                              Apply
+                              Approve
                            </Button>
                         </Stack>
                      </div>
