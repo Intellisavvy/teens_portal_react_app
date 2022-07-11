@@ -300,7 +300,7 @@ const JobPostForm = (props: any) => {
                                 <input type={'checkbox'} /> I accept TERMS & CONDITIONS
 
                             </div>
-                            <div className='button'>
+                            <div className='jobPostButton'>
                                 <Button
                                     variant="contained"
                                     type={'submit'}
