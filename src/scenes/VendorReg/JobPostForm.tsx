@@ -79,6 +79,7 @@ const JobPostForm = (props: any) => {
         setLoadingValue(LoadValue);
     };
 
+    console.log(data);
 
     const onVRFormSubmit = (e: any) => {
         e.preventDefault();
