@@ -79,6 +79,7 @@ const JobPostForm = (props: any) => {
         setLoadingValue(LoadValue);
     };
 
+    console.log(data);
 
     const onVRFormSubmit = (e: any) => {
         e.preventDefault();
@@ -300,7 +301,7 @@ const JobPostForm = (props: any) => {
                                 <input type={'checkbox'} /> I accept TERMS & CONDITIONS
 
                             </div>
-                            <div className='button'>
+                            <div className='jobPostButton'>
                                 <Button
                                     variant="contained"
                                     type={'submit'}

@@ -31,11 +31,12 @@
   line-height: 29.05px;
   text-align: left;
 }
-.button
-{
-  width: 9rem;
+
+.jobCardButton {
+  width: 25rem;
   margin-top: 1rem;
-  margin-left: 42rem;
+  margin-left: 35rem;
+  margin-bottom: 0.5rem;
 }
 
 

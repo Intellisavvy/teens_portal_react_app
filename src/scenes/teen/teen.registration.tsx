@@ -52,15 +52,10 @@ export default function TeenRegistration() {
         DOB: '',
         SSN: '',
         Gender: '',
-        ProfilePhoto: '',
-        Resume: '',
         PGName: '',
         PGNumber: '',
         PGEmailID: '',
         Address: '',
-        City: '',
-        State: '',
-        ZIPCode: '',
         Location: ''
     })
     const {
@@ -92,20 +87,15 @@ export default function TeenRegistration() {
             DOB: '',
             SSN: '',
             Gender: '',
-            ProfilePhoto: '',
-            Resume: '',
             PGName: '',
             PGNumber: '',
             PGEmailID: '',
             Address: '',
-            City: '',
-            State: '',
-            ZIPCode: '',
             Location: ''
         })
     }
-
-
+    console.log(data);
+    
     return (
         <div>
             <Box
@@ -119,7 +109,7 @@ export default function TeenRegistration() {
                     <form onSubmit={formDetails}>
                         <ButtonGroup
                             className='buttonGroup'
-                        sx={{ m: 2 }}
+                            sx={{ m: 2 }}
                         >
                             <Button
                                 className='btnWidth btnBGColor'
@@ -337,6 +327,7 @@ export default function TeenRegistration() {
                                         className='textFeildSize'
                                         sx={{ mt: 1.5 }}
                                         id='Location'
+                                        name='Location'
                                     />
                                 </StandaloneSearchBox>
                             </LoadScript>

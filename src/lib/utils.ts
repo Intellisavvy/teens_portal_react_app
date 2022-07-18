@@ -1,9 +1,9 @@
 export const validateEmail = (val: string)=> {
-    const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{3,}$/i;
+    const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     return val.match(mailRegex);
 }
 export const validateName = (val: string)=> {
-    const name= "^[A-Za-z]+$";
+    const name= "^[A-Z a-z]+$";
     return val.match(name)
 }
 export const validatePwd = (val: string)=> {
